@@ -10,6 +10,7 @@ using System.Threading;
 using System.Windows.Forms;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using VoterX.Properties;
 
 namespace VoterX
 {
@@ -24,30 +25,100 @@ namespace VoterX
             InitializeComponent();
         }
 
-        private void VoterX_MainMenu_Load(object sender, EventArgs e)
+        // |-| USER INTERFACE |-|
+        // Minimize Button Hover
+        private void Minimize_Button_MouseEnter(object sender, EventArgs e)
         {
-
+            Minimize_Button.Image = Resources.VoterX_HoveredMinimizeIcon;
         }
 
-        private void Vote()
+        private void Minimize_Button_MouseLeave(object sender, EventArgs e)
+        {
+            Minimize_Button.Image = Resources.VoterX_NonHoveredMinimizeIcon;
+        }
+
+        // Exit Button Hover
+        private void Exit_Button_MouseEnter(object sender, EventArgs e)
+        {
+            Exit_Button.Image = Resources.VoterX_HoveredExitIcon;
+        }
+
+        private void Exit_Button_MouseLeave(object sender, EventArgs e)
+        {
+            Exit_Button.Image = Resources.VoterX_NonHoveredExitIcon;
+        }
+
+        // Top Header Label Hover
+        private void TopHeader_Label_MouseEnter(object sender, EventArgs e)
+        {
+            TopLogo_PictureBox.Image = Resources.VoterX_HoveredVoteIcon;
+            TopHeader_Label.ForeColor = Color.FromArgb(84, 206, 111);
+            TopPanelTopBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
+            TopPanelBottomBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void TopHeader_Label_MouseLeave(object sender, EventArgs e)
+        {
+            TopLogo_PictureBox.Image = Resources.VoterX_NonHoveredVoteIcon;
+            TopHeader_Label.ForeColor = Color.FromArgb(64, 186, 91);
+            TopPanelTopBorder_Panel.BackColor = Color.FromArgb(64, 186, 91);
+            TopPanelBottomBorder_Panel.BackColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // Top Logo PictureBox Hover
+        private void TopLogo_PictureBox_MouseEnter(object sender, EventArgs e)
+        {
+            TopLogo_PictureBox.Image = Resources.VoterX_HoveredVoteIcon;
+            TopHeader_Label.ForeColor = Color.FromArgb(84, 206, 111);
+            TopPanelTopBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
+            TopPanelBottomBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void TopLogo_PictureBox_MouseLeave(object sender, EventArgs e)
+        {
+            TopLogo_PictureBox.Image = Resources.VoterX_NonHoveredVoteIcon;
+            TopHeader_Label.ForeColor = Color.FromArgb(64, 186, 91);
+            TopPanelTopBorder_Panel.BackColor = Color.FromArgb(64, 186, 91);
+            TopPanelBottomBorder_Panel.BackColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // |-| METHODS |-|
+        // Register Method
+        private void RegisterCoinSniper()
         {
             firefoxDriverService.HideCommandPromptWindow = true;
             firefoxDriver = new FirefoxDriver(firefoxDriverService);
-            firefoxDriver.Navigate().GoToUrl("https://www.startpage.com/");
-            Thread.Sleep(1000);
-            firefoxDriver.FindElementByXPath("//*[@id='q']").SendKeys("CoinSniper: Today's Best");
-            firefoxDriver.FindElementByXPath("//*[@id='search']/button[2]/div").Click();
+            // Goes For Proxy
+            firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
             Thread.Sleep(2000);
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/div/div[2]/div[1]/div[2]/div[1]/div/section[2]/div[1]/div[1]/div[2]/a").Click();
-            // Login Account 
+            // Selects The Server
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/register");
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
+            Thread.Sleep(2000);
+            // Enters Register Informations
+            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys("From Emails Database (Related Name)");
+            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys("From Emails Database (Related E-mail)");
+            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[3]/div/input").SendKeys("From Emails Database (Related Password)");
+            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[4]/div/input").SendKeys("From Emails Database Same Password");
+            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[6]/div/label").Click();
+            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[7]/div/input").Click();
+            // EMAIL VERIFICATION
+        }
+       
+        // Login & Vote Method
+        private void VoteCoinSniper()
+        {
+            firefoxDriverService.HideCommandPromptWindow = true;
+            firefoxDriver = new FirefoxDriver(firefoxDriverService);
+            // Goes For Proxy
+            firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
+            Thread.Sleep(2000);
+            // Selects The Server
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/login");
             // Search Coin
             // Click Coin
-            // Vote Coin
-        }
-
-        private void Selenium_Button_Click(object sender, EventArgs e)
-        {
-            Vote();
         }
     }
 }

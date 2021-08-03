@@ -3,7 +3,6 @@ C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.exe
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.pdb
 C:\Users\u\source\repos\VoterX\bin\Debug\WebDriver.dll
 C:\Users\u\source\repos\VoterX\bin\Debug\WebDriver.xml
-C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.AssemblyReference.cache
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.VoterX_MainMenu.resources
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.Properties.Resources.resources
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.GenerateResource.cache

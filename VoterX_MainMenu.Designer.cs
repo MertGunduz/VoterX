@@ -41,15 +41,26 @@ namespace VoterX
             this.TopLogo_PictureBox = new System.Windows.Forms.PictureBox();
             this.TopPanelBottomBorder_Panel = new System.Windows.Forms.Panel();
             this.TopPanelTopBorder_Panel = new System.Windows.Forms.Panel();
+            this.BottomBorder_Panel = new System.Windows.Forms.Panel();
+            this.MidContainer_Panel = new System.Windows.Forms.Panel();
+            this.MidContainer_ExpandPanel = new System.Windows.Forms.Panel();
+            this.LeftPadding_Panel = new System.Windows.Forms.Panel();
+            this.RightPadding_Panel = new System.Windows.Forms.Panel();
+            this.TopPadding_Panel = new System.Windows.Forms.Panel();
+            this.BottomPadding_Panel = new System.Windows.Forms.Panel();
             this.Mid_Panel.SuspendLayout();
             this.Top_Panel.SuspendLayout();
             this.WindowState_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).BeginInit();
+            this.MidContainer_Panel.SuspendLayout();
+            this.MidContainer_ExpandPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Mid_Panel
             // 
             this.Mid_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Mid_Panel.Controls.Add(this.MidContainer_Panel);
+            this.Mid_Panel.Controls.Add(this.BottomBorder_Panel);
             this.Mid_Panel.Controls.Add(this.Top_Panel);
             this.Mid_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Mid_Panel.Location = new System.Drawing.Point(0, 0);
@@ -180,6 +191,68 @@ namespace VoterX
             this.TopPanelTopBorder_Panel.Size = new System.Drawing.Size(800, 2);
             this.TopPanelTopBorder_Panel.TabIndex = 0;
             // 
+            // BottomBorder_Panel
+            // 
+            this.BottomBorder_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.BottomBorder_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BottomBorder_Panel.Location = new System.Drawing.Point(0, 448);
+            this.BottomBorder_Panel.Name = "BottomBorder_Panel";
+            this.BottomBorder_Panel.Size = new System.Drawing.Size(800, 2);
+            this.BottomBorder_Panel.TabIndex = 2;
+            // 
+            // MidContainer_Panel
+            // 
+            this.MidContainer_Panel.Controls.Add(this.MidContainer_ExpandPanel);
+            this.MidContainer_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MidContainer_Panel.Location = new System.Drawing.Point(0, 54);
+            this.MidContainer_Panel.Name = "MidContainer_Panel";
+            this.MidContainer_Panel.Size = new System.Drawing.Size(800, 394);
+            this.MidContainer_Panel.TabIndex = 3;
+            // 
+            // MidContainer_ExpandPanel
+            // 
+            this.MidContainer_ExpandPanel.Controls.Add(this.BottomPadding_Panel);
+            this.MidContainer_ExpandPanel.Controls.Add(this.TopPadding_Panel);
+            this.MidContainer_ExpandPanel.Controls.Add(this.RightPadding_Panel);
+            this.MidContainer_ExpandPanel.Controls.Add(this.LeftPadding_Panel);
+            this.MidContainer_ExpandPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MidContainer_ExpandPanel.Location = new System.Drawing.Point(0, 0);
+            this.MidContainer_ExpandPanel.Name = "MidContainer_ExpandPanel";
+            this.MidContainer_ExpandPanel.Size = new System.Drawing.Size(800, 394);
+            this.MidContainer_ExpandPanel.TabIndex = 0;
+            // 
+            // LeftPadding_Panel
+            // 
+            this.LeftPadding_Panel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LeftPadding_Panel.Location = new System.Drawing.Point(0, 0);
+            this.LeftPadding_Panel.Name = "LeftPadding_Panel";
+            this.LeftPadding_Panel.Size = new System.Drawing.Size(10, 394);
+            this.LeftPadding_Panel.TabIndex = 0;
+            // 
+            // RightPadding_Panel
+            // 
+            this.RightPadding_Panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.RightPadding_Panel.Location = new System.Drawing.Point(790, 0);
+            this.RightPadding_Panel.Name = "RightPadding_Panel";
+            this.RightPadding_Panel.Size = new System.Drawing.Size(10, 394);
+            this.RightPadding_Panel.TabIndex = 1;
+            // 
+            // TopPadding_Panel
+            // 
+            this.TopPadding_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPadding_Panel.Location = new System.Drawing.Point(10, 0);
+            this.TopPadding_Panel.Name = "TopPadding_Panel";
+            this.TopPadding_Panel.Size = new System.Drawing.Size(780, 10);
+            this.TopPadding_Panel.TabIndex = 2;
+            // 
+            // BottomPadding_Panel
+            // 
+            this.BottomPadding_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BottomPadding_Panel.Location = new System.Drawing.Point(10, 384);
+            this.BottomPadding_Panel.Name = "BottomPadding_Panel";
+            this.BottomPadding_Panel.Size = new System.Drawing.Size(780, 10);
+            this.BottomPadding_Panel.TabIndex = 3;
+            // 
             // VoterX_MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -195,6 +268,8 @@ namespace VoterX
             this.Top_Panel.ResumeLayout(false);
             this.WindowState_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).EndInit();
+            this.MidContainer_Panel.ResumeLayout(false);
+            this.MidContainer_ExpandPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -212,6 +287,13 @@ namespace VoterX
         private System.Windows.Forms.Button Exit_Button;
         private System.Windows.Forms.Panel TopSeperator_Panel;
         private System.Windows.Forms.Panel BottomSeperator_Panel;
+        private System.Windows.Forms.Panel BottomBorder_Panel;
+        private System.Windows.Forms.Panel MidContainer_Panel;
+        private System.Windows.Forms.Panel MidContainer_ExpandPanel;
+        private System.Windows.Forms.Panel RightPadding_Panel;
+        private System.Windows.Forms.Panel LeftPadding_Panel;
+        private System.Windows.Forms.Panel TopPadding_Panel;
+        private System.Windows.Forms.Panel BottomPadding_Panel;
     }
 }
 

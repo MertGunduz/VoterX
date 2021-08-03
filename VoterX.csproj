@@ -96,6 +96,7 @@
     <None Include="Resources\VoterX_HoveredVoteIcon.png" />
     <None Include="Resources\VoterX_HoveredMinimizeIcon.png" />
     <None Include="Resources\VoterX_HoveredExitIcon.png" />
+    <None Include="Resources\VoterX_LittleContainerPanelBackground.jpg" />
     <Content Include="VoterX_VoteIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

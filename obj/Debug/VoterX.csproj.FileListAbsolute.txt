@@ -10,3 +10,4 @@ C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.CoreCompileInputs.cache
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.CopyComplete
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.exe
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.pdb
+C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.AssemblyReference.cache

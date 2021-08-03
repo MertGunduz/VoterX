@@ -96,7 +96,14 @@
     <None Include="Resources\VoterX_HoveredVoteIcon.png" />
     <None Include="Resources\VoterX_HoveredMinimizeIcon.png" />
     <None Include="Resources\VoterX_HoveredExitIcon.png" />
-    <None Include="Resources\VoterX_LittleContainerPanelBackground.jpg" />
+    <None Include="Resources\VoterX_HoveredAccountsIcon.png" />
+    <None Include="Resources\VoterX_HoveredRegisterIcon.png" />
+    <None Include="Resources\VoterX_HoveredVoteCoinIcon.png" />
+    <None Include="Resources\VoterX_NonHoveredAccountsIcon.png" />
+    <None Include="Resources\VoterX_NonHoveredRegisterIcon.png" />
+    <None Include="Resources\VoterX_NonHoveredVoteCoinIcon.png" />
+    <None Include="Resources\VoterX_HoveredStartIcon.png" />
+    <None Include="Resources\VoterX_NonHoveredStartIcon.png" />
     <Content Include="VoterX_VoteIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

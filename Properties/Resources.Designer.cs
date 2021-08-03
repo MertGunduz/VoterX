@@ -63,6 +63,16 @@ namespace VoterX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap VoterX_HoveredAccountsIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_HoveredAccountsIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap VoterX_HoveredExitIcon {
             get {
                 object obj = ResourceManager.GetObject("VoterX_HoveredExitIcon", resourceCulture);
@@ -83,9 +93,49 @@ namespace VoterX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap VoterX_HoveredRegisterIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_HoveredRegisterIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoterX_HoveredStartIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_HoveredStartIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoterX_HoveredVoteCoinIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_HoveredVoteCoinIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap VoterX_HoveredVoteIcon {
             get {
                 object obj = ResourceManager.GetObject("VoterX_HoveredVoteIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoterX_NonHoveredAccountsIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_NonHoveredAccountsIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +156,36 @@ namespace VoterX.Properties {
         internal static System.Drawing.Bitmap VoterX_NonHoveredMinimizeIcon {
             get {
                 object obj = ResourceManager.GetObject("VoterX_NonHoveredMinimizeIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoterX_NonHoveredRegisterIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_NonHoveredRegisterIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoterX_NonHoveredStartIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_NonHoveredStartIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoterX_NonHoveredVoteCoinIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_NonHoveredVoteCoinIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

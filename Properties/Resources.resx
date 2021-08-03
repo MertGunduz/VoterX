@@ -118,20 +118,44 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="VoterX_HoveredAccountsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_HoveredAccountsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="VoterX_HoveredExitIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_HoveredExitIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoterX_HoveredMinimizeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_HoveredMinimizeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="VoterX_HoveredRegisterIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_HoveredRegisterIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoterX_HoveredStartIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_HoveredStartIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoterX_HoveredVoteCoinIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_HoveredVoteCoinIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="VoterX_HoveredVoteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_HoveredVoteIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoterX_NonHoveredAccountsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_NonHoveredAccountsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoterX_NonHoveredExitIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_NonHoveredExitIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoterX_NonHoveredMinimizeIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_NonHoveredMinimizeIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoterX_NonHoveredRegisterIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_NonHoveredRegisterIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoterX_NonHoveredStartIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_NonHoveredStartIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoterX_NonHoveredVoteCoinIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_NonHoveredVoteCoinIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoterX_NonHoveredVoteIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_NonHoveredVoteIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -35,6 +35,8 @@ namespace VoterX
             this.MidContainer_ExpandPanel = new System.Windows.Forms.Panel();
             this.RightContainer_Panel = new System.Windows.Forms.Panel();
             this.RightContainer_ExpandPanel = new System.Windows.Forms.Panel();
+            this.Accounts_DataGridView = new System.Windows.Forms.DataGridView();
+            this.Accounts_Label = new System.Windows.Forms.Label();
             this.RightContainerRightBorder_Panel = new System.Windows.Forms.Panel();
             this.RightContainerLeftBorder_Panel = new System.Windows.Forms.Panel();
             this.RightContainerBottomBorder_Panel = new System.Windows.Forms.Panel();
@@ -42,7 +44,16 @@ namespace VoterX
             this.MidRightMargin_Panel = new System.Windows.Forms.Panel();
             this.MiddleContainer_Panel = new System.Windows.Forms.Panel();
             this.MiddleContainer_ExpandPanel = new System.Windows.Forms.Panel();
+            this.VoteQuantity_TextBox = new System.Windows.Forms.TextBox();
+            this.MSeperator4_Panel = new System.Windows.Forms.Panel();
+            this.VotingSpeed_TextBox = new System.Windows.Forms.TextBox();
+            this.MSeperator3_Panel = new System.Windows.Forms.Panel();
+            this.StartVoting_Button = new System.Windows.Forms.Button();
+            this.MSeperator2_Panel = new System.Windows.Forms.Panel();
+            this.VoteRichTextBox_Panel = new System.Windows.Forms.Panel();
+            this.VoteOperationLog_RichTextBox = new System.Windows.Forms.RichTextBox();
             this.MSeperator1_Panel = new System.Windows.Forms.Panel();
+            this.VoteACoin_Label = new System.Windows.Forms.Label();
             this.MiddleContainerRightBorder_Panel = new System.Windows.Forms.Panel();
             this.MiddleContainerLeftBorder_Panel = new System.Windows.Forms.Panel();
             this.MiddleContainerBottomBorder_Panel = new System.Windows.Forms.Panel();
@@ -50,6 +61,16 @@ namespace VoterX
             this.MidLeftMargin_Panel = new System.Windows.Forms.Panel();
             this.LeftContainer_Panel = new System.Windows.Forms.Panel();
             this.LeftContainer_ExpandPanel = new System.Windows.Forms.Panel();
+            this.AccountQuantity_TextBox = new System.Windows.Forms.TextBox();
+            this.LSeperator4_Panel = new System.Windows.Forms.Panel();
+            this.OperationSpeed_TextBox = new System.Windows.Forms.TextBox();
+            this.LSeperator3_Panel = new System.Windows.Forms.Panel();
+            this.RegisterAccounts_Button = new System.Windows.Forms.Button();
+            this.LSeperator2_Panel = new System.Windows.Forms.Panel();
+            this.RegisterRichTextBox_Panel = new System.Windows.Forms.Panel();
+            this.RegisterOperationLog_RichTextBox = new System.Windows.Forms.RichTextBox();
+            this.LSeperator1_Panel = new System.Windows.Forms.Panel();
+            this.RegisterAccounts_Label = new System.Windows.Forms.Label();
             this.LeftContainerRightBorder_Panel = new System.Windows.Forms.Panel();
             this.LeftContainerLeftBorder_Panel = new System.Windows.Forms.Panel();
             this.LeftContainerBottomBorder_Panel = new System.Windows.Forms.Panel();
@@ -60,50 +81,29 @@ namespace VoterX
             this.LeftPadding_Panel = new System.Windows.Forms.Panel();
             this.Top_Panel = new System.Windows.Forms.Panel();
             this.WindowState_Panel = new System.Windows.Forms.Panel();
+            this.Minimize_Button = new System.Windows.Forms.Button();
+            this.Exit_Button = new System.Windows.Forms.Button();
             this.TopSeperator_Panel = new System.Windows.Forms.Panel();
             this.BottomSeperator_Panel = new System.Windows.Forms.Panel();
             this.TopHeader_Label = new System.Windows.Forms.Label();
+            this.TopLogo_PictureBox = new System.Windows.Forms.PictureBox();
             this.TopPanelBottomBorder_Panel = new System.Windows.Forms.Panel();
             this.TopPanelTopBorder_Panel = new System.Windows.Forms.Panel();
-            this.LSeperator1_Panel = new System.Windows.Forms.Panel();
-            this.RegisterRichTextBox_Panel = new System.Windows.Forms.Panel();
-            this.LSeperator2_Panel = new System.Windows.Forms.Panel();
-            this.AccountQuantity_TextBox = new System.Windows.Forms.TextBox();
-            this.LSeperator4_Panel = new System.Windows.Forms.Panel();
-            this.OperationSpeed_TextBox = new System.Windows.Forms.TextBox();
-            this.LSeperator3_Panel = new System.Windows.Forms.Panel();
-            this.RegisterOperationLog_RichTextBox = new System.Windows.Forms.RichTextBox();
-            this.Accounts_Label = new System.Windows.Forms.Label();
-            this.VoteACoin_Label = new System.Windows.Forms.Label();
-            this.RegisterAccounts_Button = new System.Windows.Forms.Button();
-            this.RegisterAccounts_Label = new System.Windows.Forms.Label();
-            this.Minimize_Button = new System.Windows.Forms.Button();
-            this.Exit_Button = new System.Windows.Forms.Button();
-            this.TopLogo_PictureBox = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Mid_Panel.SuspendLayout();
             this.MidContainer_Panel.SuspendLayout();
             this.MidContainer_ExpandPanel.SuspendLayout();
             this.RightContainer_Panel.SuspendLayout();
             this.RightContainer_ExpandPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).BeginInit();
             this.MiddleContainer_Panel.SuspendLayout();
             this.MiddleContainer_ExpandPanel.SuspendLayout();
+            this.VoteRichTextBox_Panel.SuspendLayout();
             this.LeftContainer_Panel.SuspendLayout();
             this.LeftContainer_ExpandPanel.SuspendLayout();
+            this.RegisterRichTextBox_Panel.SuspendLayout();
             this.Top_Panel.SuspendLayout();
             this.WindowState_Panel.SuspendLayout();
-            this.RegisterRichTextBox_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // Mid_Panel
@@ -160,13 +160,37 @@ namespace VoterX
             // 
             // RightContainer_ExpandPanel
             // 
-            this.RightContainer_ExpandPanel.Controls.Add(this.dataGridView1);
+            this.RightContainer_ExpandPanel.Controls.Add(this.Accounts_DataGridView);
             this.RightContainer_ExpandPanel.Controls.Add(this.Accounts_Label);
             this.RightContainer_ExpandPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RightContainer_ExpandPanel.Location = new System.Drawing.Point(2, 2);
             this.RightContainer_ExpandPanel.Name = "RightContainer_ExpandPanel";
             this.RightContainer_ExpandPanel.Size = new System.Drawing.Size(250, 372);
             this.RightContainer_ExpandPanel.TabIndex = 8;
+            // 
+            // Accounts_DataGridView
+            // 
+            this.Accounts_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Accounts_DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Accounts_DataGridView.Location = new System.Drawing.Point(0, 55);
+            this.Accounts_DataGridView.Name = "Accounts_DataGridView";
+            this.Accounts_DataGridView.Size = new System.Drawing.Size(250, 317);
+            this.Accounts_DataGridView.TabIndex = 2;
+            // 
+            // Accounts_Label
+            // 
+            this.Accounts_Label.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Accounts_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Accounts_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.Accounts_Label.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredAccountsIcon;
+            this.Accounts_Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Accounts_Label.Location = new System.Drawing.Point(0, 0);
+            this.Accounts_Label.Name = "Accounts_Label";
+            this.Accounts_Label.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.Accounts_Label.Size = new System.Drawing.Size(250, 41);
+            this.Accounts_Label.TabIndex = 1;
+            this.Accounts_Label.Text = "Accounts";
+            this.Accounts_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // RightContainerRightBorder_Panel
             // 
@@ -229,13 +253,13 @@ namespace VoterX
             // 
             // MiddleContainer_ExpandPanel
             // 
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.textBox2);
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.panel4);
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.textBox1);
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.panel3);
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.button1);
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.panel2);
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.panel1);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.VoteQuantity_TextBox);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator4_Panel);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.VotingSpeed_TextBox);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator3_Panel);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.StartVoting_Button);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator2_Panel);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.VoteRichTextBox_Panel);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator1_Panel);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.VoteACoin_Label);
             this.MiddleContainer_ExpandPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -244,6 +268,101 @@ namespace VoterX
             this.MiddleContainer_ExpandPanel.Size = new System.Drawing.Size(249, 372);
             this.MiddleContainer_ExpandPanel.TabIndex = 8;
             // 
+            // VoteQuantity_TextBox
+            // 
+            this.VoteQuantity_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.VoteQuantity_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VoteQuantity_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.VoteQuantity_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.VoteQuantity_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.VoteQuantity_TextBox.Location = new System.Drawing.Point(0, 55);
+            this.VoteQuantity_TextBox.Name = "VoteQuantity_TextBox";
+            this.VoteQuantity_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.VoteQuantity_TextBox.TabIndex = 18;
+            this.VoteQuantity_TextBox.Text = "  Vote Quantity ->";
+            // 
+            // MSeperator4_Panel
+            // 
+            this.MSeperator4_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MSeperator4_Panel.Location = new System.Drawing.Point(0, 82);
+            this.MSeperator4_Panel.Name = "MSeperator4_Panel";
+            this.MSeperator4_Panel.Size = new System.Drawing.Size(249, 10);
+            this.MSeperator4_Panel.TabIndex = 17;
+            // 
+            // VotingSpeed_TextBox
+            // 
+            this.VotingSpeed_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.VotingSpeed_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.VotingSpeed_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.VotingSpeed_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.VotingSpeed_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.VotingSpeed_TextBox.Location = new System.Drawing.Point(0, 92);
+            this.VotingSpeed_TextBox.Name = "VotingSpeed_TextBox";
+            this.VotingSpeed_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.VotingSpeed_TextBox.TabIndex = 16;
+            this.VotingSpeed_TextBox.Text = "  Voting Speed ->";
+            // 
+            // MSeperator3_Panel
+            // 
+            this.MSeperator3_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MSeperator3_Panel.Location = new System.Drawing.Point(0, 119);
+            this.MSeperator3_Panel.Name = "MSeperator3_Panel";
+            this.MSeperator3_Panel.Size = new System.Drawing.Size(249, 10);
+            this.MSeperator3_Panel.TabIndex = 15;
+            // 
+            // StartVoting_Button
+            // 
+            this.StartVoting_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.StartVoting_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StartVoting_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.StartVoting_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.StartVoting_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.StartVoting_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.StartVoting_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartVoting_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.StartVoting_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.StartVoting_Button.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredStartIcon;
+            this.StartVoting_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.StartVoting_Button.Location = new System.Drawing.Point(0, 129);
+            this.StartVoting_Button.Name = "StartVoting_Button";
+            this.StartVoting_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.StartVoting_Button.Size = new System.Drawing.Size(249, 39);
+            this.StartVoting_Button.TabIndex = 14;
+            this.StartVoting_Button.Text = "Start Voting";
+            this.StartVoting_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.StartVoting_Button.UseVisualStyleBackColor = false;
+            // 
+            // MSeperator2_Panel
+            // 
+            this.MSeperator2_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.MSeperator2_Panel.Location = new System.Drawing.Point(0, 168);
+            this.MSeperator2_Panel.Name = "MSeperator2_Panel";
+            this.MSeperator2_Panel.Size = new System.Drawing.Size(249, 10);
+            this.MSeperator2_Panel.TabIndex = 9;
+            // 
+            // VoteRichTextBox_Panel
+            // 
+            this.VoteRichTextBox_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.VoteRichTextBox_Panel.Controls.Add(this.VoteOperationLog_RichTextBox);
+            this.VoteRichTextBox_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.VoteRichTextBox_Panel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.VoteRichTextBox_Panel.Location = new System.Drawing.Point(0, 178);
+            this.VoteRichTextBox_Panel.Name = "VoteRichTextBox_Panel";
+            this.VoteRichTextBox_Panel.Size = new System.Drawing.Size(249, 184);
+            this.VoteRichTextBox_Panel.TabIndex = 8;
+            // 
+            // VoteOperationLog_RichTextBox
+            // 
+            this.VoteOperationLog_RichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.VoteOperationLog_RichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.VoteOperationLog_RichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.VoteOperationLog_RichTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.VoteOperationLog_RichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.VoteOperationLog_RichTextBox.Name = "VoteOperationLog_RichTextBox";
+            this.VoteOperationLog_RichTextBox.Size = new System.Drawing.Size(249, 184);
+            this.VoteOperationLog_RichTextBox.TabIndex = 0;
+            this.VoteOperationLog_RichTextBox.Text = "  Operation Log ->";
+            // 
             // MSeperator1_Panel
             // 
             this.MSeperator1_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -251,6 +370,21 @@ namespace VoterX
             this.MSeperator1_Panel.Name = "MSeperator1_Panel";
             this.MSeperator1_Panel.Size = new System.Drawing.Size(249, 10);
             this.MSeperator1_Panel.TabIndex = 2;
+            // 
+            // VoteACoin_Label
+            // 
+            this.VoteACoin_Label.Dock = System.Windows.Forms.DockStyle.Top;
+            this.VoteACoin_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.VoteACoin_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.VoteACoin_Label.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredVoteCoinIcon;
+            this.VoteACoin_Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.VoteACoin_Label.Location = new System.Drawing.Point(0, 0);
+            this.VoteACoin_Label.Name = "VoteACoin_Label";
+            this.VoteACoin_Label.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.VoteACoin_Label.Size = new System.Drawing.Size(249, 41);
+            this.VoteACoin_Label.TabIndex = 1;
+            this.VoteACoin_Label.Text = "Vote A Coin";
+            this.VoteACoin_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MiddleContainerRightBorder_Panel
             // 
@@ -327,6 +461,124 @@ namespace VoterX
             this.LeftContainer_ExpandPanel.Name = "LeftContainer_ExpandPanel";
             this.LeftContainer_ExpandPanel.Size = new System.Drawing.Size(249, 372);
             this.LeftContainer_ExpandPanel.TabIndex = 4;
+            // 
+            // AccountQuantity_TextBox
+            // 
+            this.AccountQuantity_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.AccountQuantity_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AccountQuantity_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.AccountQuantity_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.AccountQuantity_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.AccountQuantity_TextBox.Location = new System.Drawing.Point(0, 55);
+            this.AccountQuantity_TextBox.Name = "AccountQuantity_TextBox";
+            this.AccountQuantity_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.AccountQuantity_TextBox.TabIndex = 17;
+            this.AccountQuantity_TextBox.Text = "  Account Quantity ->";
+            // 
+            // LSeperator4_Panel
+            // 
+            this.LSeperator4_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LSeperator4_Panel.Location = new System.Drawing.Point(0, 82);
+            this.LSeperator4_Panel.Name = "LSeperator4_Panel";
+            this.LSeperator4_Panel.Size = new System.Drawing.Size(249, 10);
+            this.LSeperator4_Panel.TabIndex = 16;
+            // 
+            // OperationSpeed_TextBox
+            // 
+            this.OperationSpeed_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.OperationSpeed_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.OperationSpeed_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.OperationSpeed_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.OperationSpeed_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.OperationSpeed_TextBox.Location = new System.Drawing.Point(0, 92);
+            this.OperationSpeed_TextBox.Name = "OperationSpeed_TextBox";
+            this.OperationSpeed_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.OperationSpeed_TextBox.TabIndex = 15;
+            this.OperationSpeed_TextBox.Text = "  Registration Speed ->";
+            // 
+            // LSeperator3_Panel
+            // 
+            this.LSeperator3_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LSeperator3_Panel.Location = new System.Drawing.Point(0, 119);
+            this.LSeperator3_Panel.Name = "LSeperator3_Panel";
+            this.LSeperator3_Panel.Size = new System.Drawing.Size(249, 10);
+            this.LSeperator3_Panel.TabIndex = 14;
+            // 
+            // RegisterAccounts_Button
+            // 
+            this.RegisterAccounts_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.RegisterAccounts_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RegisterAccounts_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RegisterAccounts_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.RegisterAccounts_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.RegisterAccounts_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.RegisterAccounts_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegisterAccounts_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.RegisterAccounts_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.RegisterAccounts_Button.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredStartIcon;
+            this.RegisterAccounts_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegisterAccounts_Button.Location = new System.Drawing.Point(0, 129);
+            this.RegisterAccounts_Button.Name = "RegisterAccounts_Button";
+            this.RegisterAccounts_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.RegisterAccounts_Button.Size = new System.Drawing.Size(249, 39);
+            this.RegisterAccounts_Button.TabIndex = 13;
+            this.RegisterAccounts_Button.Text = "Start Registration";
+            this.RegisterAccounts_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegisterAccounts_Button.UseVisualStyleBackColor = false;
+            // 
+            // LSeperator2_Panel
+            // 
+            this.LSeperator2_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LSeperator2_Panel.Location = new System.Drawing.Point(0, 168);
+            this.LSeperator2_Panel.Name = "LSeperator2_Panel";
+            this.LSeperator2_Panel.Size = new System.Drawing.Size(249, 10);
+            this.LSeperator2_Panel.TabIndex = 8;
+            // 
+            // RegisterRichTextBox_Panel
+            // 
+            this.RegisterRichTextBox_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.RegisterRichTextBox_Panel.Controls.Add(this.RegisterOperationLog_RichTextBox);
+            this.RegisterRichTextBox_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RegisterRichTextBox_Panel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.RegisterRichTextBox_Panel.Location = new System.Drawing.Point(0, 178);
+            this.RegisterRichTextBox_Panel.Name = "RegisterRichTextBox_Panel";
+            this.RegisterRichTextBox_Panel.Size = new System.Drawing.Size(249, 184);
+            this.RegisterRichTextBox_Panel.TabIndex = 7;
+            // 
+            // RegisterOperationLog_RichTextBox
+            // 
+            this.RegisterOperationLog_RichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.RegisterOperationLog_RichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RegisterOperationLog_RichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RegisterOperationLog_RichTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.RegisterOperationLog_RichTextBox.Location = new System.Drawing.Point(0, 0);
+            this.RegisterOperationLog_RichTextBox.Name = "RegisterOperationLog_RichTextBox";
+            this.RegisterOperationLog_RichTextBox.Size = new System.Drawing.Size(249, 184);
+            this.RegisterOperationLog_RichTextBox.TabIndex = 0;
+            this.RegisterOperationLog_RichTextBox.Text = "  Operation Log ->";
+            // 
+            // LSeperator1_Panel
+            // 
+            this.LSeperator1_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LSeperator1_Panel.Location = new System.Drawing.Point(0, 362);
+            this.LSeperator1_Panel.Name = "LSeperator1_Panel";
+            this.LSeperator1_Panel.Size = new System.Drawing.Size(249, 10);
+            this.LSeperator1_Panel.TabIndex = 1;
+            // 
+            // RegisterAccounts_Label
+            // 
+            this.RegisterAccounts_Label.Dock = System.Windows.Forms.DockStyle.Top;
+            this.RegisterAccounts_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.RegisterAccounts_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.RegisterAccounts_Label.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredRegisterIcon;
+            this.RegisterAccounts_Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.RegisterAccounts_Label.Location = new System.Drawing.Point(0, 0);
+            this.RegisterAccounts_Label.Name = "RegisterAccounts_Label";
+            this.RegisterAccounts_Label.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.RegisterAccounts_Label.Size = new System.Drawing.Size(249, 41);
+            this.RegisterAccounts_Label.TabIndex = 0;
+            this.RegisterAccounts_Label.Text = "Register Accounts";
+            this.RegisterAccounts_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // LeftContainerRightBorder_Panel
             // 
@@ -422,202 +674,6 @@ namespace VoterX
             this.WindowState_Panel.Size = new System.Drawing.Size(200, 50);
             this.WindowState_Panel.TabIndex = 4;
             // 
-            // TopSeperator_Panel
-            // 
-            this.TopSeperator_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopSeperator_Panel.Location = new System.Drawing.Point(0, 0);
-            this.TopSeperator_Panel.Name = "TopSeperator_Panel";
-            this.TopSeperator_Panel.Size = new System.Drawing.Size(200, 10);
-            this.TopSeperator_Panel.TabIndex = 1;
-            // 
-            // BottomSeperator_Panel
-            // 
-            this.BottomSeperator_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BottomSeperator_Panel.Location = new System.Drawing.Point(0, 40);
-            this.BottomSeperator_Panel.Name = "BottomSeperator_Panel";
-            this.BottomSeperator_Panel.Size = new System.Drawing.Size(200, 10);
-            this.BottomSeperator_Panel.TabIndex = 0;
-            // 
-            // TopHeader_Label
-            // 
-            this.TopHeader_Label.Dock = System.Windows.Forms.DockStyle.Left;
-            this.TopHeader_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.TopHeader_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.TopHeader_Label.Location = new System.Drawing.Point(36, 2);
-            this.TopHeader_Label.Name = "TopHeader_Label";
-            this.TopHeader_Label.Size = new System.Drawing.Size(62, 50);
-            this.TopHeader_Label.TabIndex = 3;
-            this.TopHeader_Label.Text = "VoterX";
-            this.TopHeader_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TopHeader_Label.MouseEnter += new System.EventHandler(this.TopHeader_Label_MouseEnter);
-            this.TopHeader_Label.MouseLeave += new System.EventHandler(this.TopHeader_Label_MouseLeave);
-            // 
-            // TopPanelBottomBorder_Panel
-            // 
-            this.TopPanelBottomBorder_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.TopPanelBottomBorder_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.TopPanelBottomBorder_Panel.Location = new System.Drawing.Point(0, 52);
-            this.TopPanelBottomBorder_Panel.Name = "TopPanelBottomBorder_Panel";
-            this.TopPanelBottomBorder_Panel.Size = new System.Drawing.Size(800, 2);
-            this.TopPanelBottomBorder_Panel.TabIndex = 1;
-            // 
-            // TopPanelTopBorder_Panel
-            // 
-            this.TopPanelTopBorder_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.TopPanelTopBorder_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanelTopBorder_Panel.Location = new System.Drawing.Point(0, 0);
-            this.TopPanelTopBorder_Panel.Name = "TopPanelTopBorder_Panel";
-            this.TopPanelTopBorder_Panel.Size = new System.Drawing.Size(800, 2);
-            this.TopPanelTopBorder_Panel.TabIndex = 0;
-            // 
-            // LSeperator1_Panel
-            // 
-            this.LSeperator1_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LSeperator1_Panel.Location = new System.Drawing.Point(0, 362);
-            this.LSeperator1_Panel.Name = "LSeperator1_Panel";
-            this.LSeperator1_Panel.Size = new System.Drawing.Size(249, 10);
-            this.LSeperator1_Panel.TabIndex = 1;
-            // 
-            // RegisterRichTextBox_Panel
-            // 
-            this.RegisterRichTextBox_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.RegisterRichTextBox_Panel.Controls.Add(this.RegisterOperationLog_RichTextBox);
-            this.RegisterRichTextBox_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.RegisterRichTextBox_Panel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.RegisterRichTextBox_Panel.Location = new System.Drawing.Point(0, 178);
-            this.RegisterRichTextBox_Panel.Name = "RegisterRichTextBox_Panel";
-            this.RegisterRichTextBox_Panel.Size = new System.Drawing.Size(249, 184);
-            this.RegisterRichTextBox_Panel.TabIndex = 7;
-            // 
-            // LSeperator2_Panel
-            // 
-            this.LSeperator2_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LSeperator2_Panel.Location = new System.Drawing.Point(0, 168);
-            this.LSeperator2_Panel.Name = "LSeperator2_Panel";
-            this.LSeperator2_Panel.Size = new System.Drawing.Size(249, 10);
-            this.LSeperator2_Panel.TabIndex = 8;
-            // 
-            // AccountQuantity_TextBox
-            // 
-            this.AccountQuantity_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.AccountQuantity_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AccountQuantity_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.AccountQuantity_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.AccountQuantity_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.AccountQuantity_TextBox.Location = new System.Drawing.Point(0, 55);
-            this.AccountQuantity_TextBox.Name = "AccountQuantity_TextBox";
-            this.AccountQuantity_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.AccountQuantity_TextBox.TabIndex = 17;
-            this.AccountQuantity_TextBox.Text = "  Account Quantity ->";
-            // 
-            // LSeperator4_Panel
-            // 
-            this.LSeperator4_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LSeperator4_Panel.Location = new System.Drawing.Point(0, 82);
-            this.LSeperator4_Panel.Name = "LSeperator4_Panel";
-            this.LSeperator4_Panel.Size = new System.Drawing.Size(249, 10);
-            this.LSeperator4_Panel.TabIndex = 16;
-            // 
-            // OperationSpeed_TextBox
-            // 
-            this.OperationSpeed_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.OperationSpeed_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.OperationSpeed_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.OperationSpeed_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.OperationSpeed_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.OperationSpeed_TextBox.Location = new System.Drawing.Point(0, 92);
-            this.OperationSpeed_TextBox.Name = "OperationSpeed_TextBox";
-            this.OperationSpeed_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.OperationSpeed_TextBox.TabIndex = 15;
-            this.OperationSpeed_TextBox.Text = "  Registration Speed ->";
-            // 
-            // LSeperator3_Panel
-            // 
-            this.LSeperator3_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.LSeperator3_Panel.Location = new System.Drawing.Point(0, 119);
-            this.LSeperator3_Panel.Name = "LSeperator3_Panel";
-            this.LSeperator3_Panel.Size = new System.Drawing.Size(249, 10);
-            this.LSeperator3_Panel.TabIndex = 14;
-            // 
-            // RegisterOperationLog_RichTextBox
-            // 
-            this.RegisterOperationLog_RichTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.RegisterOperationLog_RichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RegisterOperationLog_RichTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RegisterOperationLog_RichTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.RegisterOperationLog_RichTextBox.Location = new System.Drawing.Point(0, 0);
-            this.RegisterOperationLog_RichTextBox.Name = "RegisterOperationLog_RichTextBox";
-            this.RegisterOperationLog_RichTextBox.Size = new System.Drawing.Size(249, 184);
-            this.RegisterOperationLog_RichTextBox.TabIndex = 0;
-            this.RegisterOperationLog_RichTextBox.Text = "  Operation Log ->";
-            // 
-            // Accounts_Label
-            // 
-            this.Accounts_Label.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Accounts_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Accounts_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.Accounts_Label.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredAccountsIcon;
-            this.Accounts_Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Accounts_Label.Location = new System.Drawing.Point(0, 0);
-            this.Accounts_Label.Name = "Accounts_Label";
-            this.Accounts_Label.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.Accounts_Label.Size = new System.Drawing.Size(250, 41);
-            this.Accounts_Label.TabIndex = 1;
-            this.Accounts_Label.Text = "Accounts";
-            this.Accounts_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // VoteACoin_Label
-            // 
-            this.VoteACoin_Label.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VoteACoin_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.VoteACoin_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.VoteACoin_Label.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredVoteCoinIcon;
-            this.VoteACoin_Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.VoteACoin_Label.Location = new System.Drawing.Point(0, 0);
-            this.VoteACoin_Label.Name = "VoteACoin_Label";
-            this.VoteACoin_Label.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.VoteACoin_Label.Size = new System.Drawing.Size(249, 41);
-            this.VoteACoin_Label.TabIndex = 1;
-            this.VoteACoin_Label.Text = "Vote A Coin";
-            this.VoteACoin_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // RegisterAccounts_Button
-            // 
-            this.RegisterAccounts_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.RegisterAccounts_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegisterAccounts_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.RegisterAccounts_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.RegisterAccounts_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.RegisterAccounts_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.RegisterAccounts_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegisterAccounts_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.RegisterAccounts_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.RegisterAccounts_Button.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredStartIcon;
-            this.RegisterAccounts_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegisterAccounts_Button.Location = new System.Drawing.Point(0, 129);
-            this.RegisterAccounts_Button.Name = "RegisterAccounts_Button";
-            this.RegisterAccounts_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.RegisterAccounts_Button.Size = new System.Drawing.Size(249, 39);
-            this.RegisterAccounts_Button.TabIndex = 13;
-            this.RegisterAccounts_Button.Text = "Start Registration";
-            this.RegisterAccounts_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RegisterAccounts_Button.UseVisualStyleBackColor = false;
-            // 
-            // RegisterAccounts_Label
-            // 
-            this.RegisterAccounts_Label.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RegisterAccounts_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.RegisterAccounts_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.RegisterAccounts_Label.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredRegisterIcon;
-            this.RegisterAccounts_Label.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RegisterAccounts_Label.Location = new System.Drawing.Point(0, 0);
-            this.RegisterAccounts_Label.Name = "RegisterAccounts_Label";
-            this.RegisterAccounts_Label.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.RegisterAccounts_Label.Size = new System.Drawing.Size(249, 41);
-            this.RegisterAccounts_Label.TabIndex = 0;
-            this.RegisterAccounts_Label.Text = "Register Accounts";
-            this.RegisterAccounts_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Minimize_Button
             // 
             this.Minimize_Button.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -654,6 +710,36 @@ namespace VoterX
             this.Exit_Button.MouseEnter += new System.EventHandler(this.Exit_Button_MouseEnter);
             this.Exit_Button.MouseLeave += new System.EventHandler(this.Exit_Button_MouseLeave);
             // 
+            // TopSeperator_Panel
+            // 
+            this.TopSeperator_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopSeperator_Panel.Location = new System.Drawing.Point(0, 0);
+            this.TopSeperator_Panel.Name = "TopSeperator_Panel";
+            this.TopSeperator_Panel.Size = new System.Drawing.Size(200, 10);
+            this.TopSeperator_Panel.TabIndex = 1;
+            // 
+            // BottomSeperator_Panel
+            // 
+            this.BottomSeperator_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BottomSeperator_Panel.Location = new System.Drawing.Point(0, 40);
+            this.BottomSeperator_Panel.Name = "BottomSeperator_Panel";
+            this.BottomSeperator_Panel.Size = new System.Drawing.Size(200, 10);
+            this.BottomSeperator_Panel.TabIndex = 0;
+            // 
+            // TopHeader_Label
+            // 
+            this.TopHeader_Label.Dock = System.Windows.Forms.DockStyle.Left;
+            this.TopHeader_Label.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.TopHeader_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.TopHeader_Label.Location = new System.Drawing.Point(36, 2);
+            this.TopHeader_Label.Name = "TopHeader_Label";
+            this.TopHeader_Label.Size = new System.Drawing.Size(62, 50);
+            this.TopHeader_Label.TabIndex = 3;
+            this.TopHeader_Label.Text = "VoterX";
+            this.TopHeader_Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TopHeader_Label.MouseEnter += new System.EventHandler(this.TopHeader_Label_MouseEnter);
+            this.TopHeader_Label.MouseLeave += new System.EventHandler(this.TopHeader_Label_MouseLeave);
+            // 
             // TopLogo_PictureBox
             // 
             this.TopLogo_PictureBox.Dock = System.Windows.Forms.DockStyle.Left;
@@ -667,109 +753,23 @@ namespace VoterX
             this.TopLogo_PictureBox.MouseEnter += new System.EventHandler(this.TopLogo_PictureBox_MouseEnter);
             this.TopLogo_PictureBox.MouseLeave += new System.EventHandler(this.TopLogo_PictureBox_MouseLeave);
             // 
-            // panel1
+            // TopPanelBottomBorder_Panel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.panel1.Location = new System.Drawing.Point(0, 178);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(249, 184);
-            this.panel1.TabIndex = 8;
+            this.TopPanelBottomBorder_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.TopPanelBottomBorder_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TopPanelBottomBorder_Panel.Location = new System.Drawing.Point(0, 52);
+            this.TopPanelBottomBorder_Panel.Name = "TopPanelBottomBorder_Panel";
+            this.TopPanelBottomBorder_Panel.Size = new System.Drawing.Size(800, 2);
+            this.TopPanelBottomBorder_Panel.TabIndex = 1;
             // 
-            // richTextBox1
+            // TopPanelTopBorder_Panel
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(249, 184);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "  Operation Log ->";
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 168);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(249, 10);
-            this.panel2.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.button1.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredStartIcon;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(0, 129);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.button1.Size = new System.Drawing.Size(249, 39);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Start Voting";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 119);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(249, 10);
-            this.panel3.TabIndex = 15;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.textBox1.Location = new System.Drawing.Point(0, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(249, 27);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "  Voting Speed ->";
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 82);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(249, 10);
-            this.panel4.TabIndex = 17;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.textBox2.Location = new System.Drawing.Point(0, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 27);
-            this.textBox2.TabIndex = 18;
-            this.textBox2.Text = "  Vote Quantity ->";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 41);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(250, 331);
-            this.dataGridView1.TabIndex = 2;
+            this.TopPanelTopBorder_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.TopPanelTopBorder_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.TopPanelTopBorder_Panel.Location = new System.Drawing.Point(0, 0);
+            this.TopPanelTopBorder_Panel.Name = "TopPanelTopBorder_Panel";
+            this.TopPanelTopBorder_Panel.Size = new System.Drawing.Size(800, 2);
+            this.TopPanelTopBorder_Panel.TabIndex = 0;
             // 
             // VoterX_MainMenu
             // 
@@ -787,18 +787,18 @@ namespace VoterX
             this.MidContainer_ExpandPanel.ResumeLayout(false);
             this.RightContainer_Panel.ResumeLayout(false);
             this.RightContainer_ExpandPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).EndInit();
             this.MiddleContainer_Panel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.PerformLayout();
+            this.VoteRichTextBox_Panel.ResumeLayout(false);
             this.LeftContainer_Panel.ResumeLayout(false);
             this.LeftContainer_ExpandPanel.ResumeLayout(false);
             this.LeftContainer_ExpandPanel.PerformLayout();
+            this.RegisterRichTextBox_Panel.ResumeLayout(false);
             this.Top_Panel.ResumeLayout(false);
             this.WindowState_Panel.ResumeLayout(false);
-            this.RegisterRichTextBox_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -855,15 +855,15 @@ namespace VoterX
         private System.Windows.Forms.Panel RegisterRichTextBox_Panel;
         private System.Windows.Forms.RichTextBox RegisterOperationLog_RichTextBox;
         private System.Windows.Forms.Panel LSeperator1_Panel;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox VoteQuantity_TextBox;
+        private System.Windows.Forms.Panel MSeperator4_Panel;
+        private System.Windows.Forms.TextBox VotingSpeed_TextBox;
+        private System.Windows.Forms.Panel MSeperator3_Panel;
+        private System.Windows.Forms.Button StartVoting_Button;
+        private System.Windows.Forms.Panel MSeperator2_Panel;
+        private System.Windows.Forms.Panel VoteRichTextBox_Panel;
+        private System.Windows.Forms.RichTextBox VoteOperationLog_RichTextBox;
+        private System.Windows.Forms.DataGridView Accounts_DataGridView;
     }
 }
 

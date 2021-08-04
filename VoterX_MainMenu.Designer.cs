@@ -841,6 +841,7 @@ namespace VoterX
             this.Name = "VoterX_MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VoterX";
+            this.Load += new System.EventHandler(this.VoterX_MainMenu_Load);
             this.Mid_Panel.ResumeLayout(false);
             this.MidContainer_Panel.ResumeLayout(false);
             this.MidContainer_ExpandPanel.ResumeLayout(false);

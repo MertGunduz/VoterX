@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database.cs" />
     <Compile Include="VoterX_MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

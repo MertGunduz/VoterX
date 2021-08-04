@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.OleDb;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using VoterX.Properties;
@@ -21,9 +22,27 @@ namespace VoterX
         FirefoxDriver firefoxDriver;
         FirefoxDriverService firefoxDriverService = FirefoxDriverService.CreateDefaultService();
 
+        // Database Writing Accounts
+        string fullSentence;
+        string extractedText = "";
+        string accountGmail;
+        string accountGmailPassword;
+        string accountRamblerRu;
+        string accountRamblerRuPassword;
+        int colonRepeat = 0;
+        int readedDigit;
+
+        // Database
+        OleDbConnection oleDbConnection;
+
         public VoterX_MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void VoterX_MainMenu_Load(object sender, EventArgs e)
+        {
+            oleDbConnection = new OleDbConnection(Database.databaseString);
         }
 
         // |-| USER INTERFACE |-|
@@ -177,10 +196,83 @@ namespace VoterX
         // Database Account Insertion 
         private void InsertAccounts_Button_Click(object sender, EventArgs e)
         {
+            // Sets The OpenFileDialog Settings
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Title = "Select The Accounts Text File";
             openFileDialog.Filter = "Text File | *.txt";
-            openFileDialog.ShowDialog();
+
+            // Opens OpenFileDialog 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Gets The FilePath
+                string filePath = openFileDialog.FileName;
+
+                // Reads The File And Assigns The Sentences To AccountTextData
+                string[] accountTextData = File.ReadAllLines(filePath);
+
+                for (int i = 0; i < accountTextData.Length; i++)
+                {
+                    // Takes A Account Sentence From Array To Extract Data
+                    fullSentence = accountTextData[i];
+
+                    // Sentence Extracting
+                    for (int index = 0; index < fullSentence.Length; index++)
+                    { 
+                        // Increase ReadedDigit Number Every Loop
+                        readedDigit++;
+
+                        if (fullSentence[index].ToString() != ":")
+                        {
+                            extractedText = extractedText + fullSentence[index].ToString();
+
+                            if (readedDigit == fullSentence.Length)
+                            {
+                                // Every New Sentence Makes It 0
+                                readedDigit = 0;
+                                colonRepeat = 0;
+
+                                accountRamblerRuPassword = extractedText;
+                                extractedText = "";
+
+                                //  OLEDB
+                                oleDbConnection.Open();
+                                OleDbCommand insertAccountCommand = new OleDbCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", oleDbConnection);
+                                insertAccountCommand.Parameters.AddWithValue("@p1", accountGmail);
+                                insertAccountCommand.Parameters.AddWithValue("@p2", accountGmailPassword);
+                                insertAccountCommand.Parameters.AddWithValue("@p3", accountRamblerRu);
+                                insertAccountCommand.Parameters.AddWithValue("@p4", accountRamblerRuPassword);
+                                insertAccountCommand.ExecuteNonQuery();
+                                oleDbConnection.Close();
+
+                                accountGmail = "";
+                                accountGmailPassword = "";
+                                accountRamblerRu = "";
+                                accountRamblerRuPassword = "";
+                            }
+                        }
+                        else
+                        {
+                            colonRepeat++;
+
+                            if (colonRepeat == 1)
+                            {
+                                accountGmail = extractedText;
+                                extractedText = "";
+                            }
+                            else if (colonRepeat == 2)
+                            {
+                                accountGmailPassword = extractedText;
+                                extractedText = "";
+                            }
+                            else if (colonRepeat == 3)
+                            {
+                                accountRamblerRu = extractedText;
+                                extractedText = "";
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         // |-| METHODS |-|

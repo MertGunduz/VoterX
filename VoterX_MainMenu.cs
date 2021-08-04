@@ -297,6 +297,12 @@ namespace VoterX
         // Register Method
         private void RegisterCoinSniper()
         {
+            // Writes A Start Log
+            RegisterOperationLog_RichTextBox.Clear();
+            RegisterOperationLog_RichTextBox.Text += "|-------------------|\n";
+            RegisterOperationLog_RichTextBox.Text += "| Operation Started |\n";
+            RegisterOperationLog_RichTextBox.Text += "|-------------------|\n\n";
+
             int totalAccounts = 0;
 
             oleDbConnection.Open();
@@ -326,6 +332,8 @@ namespace VoterX
                 emailReader.Close();
                 oleDbConnection.Close();
 
+                RegisterOperationLog_RichTextBox.Text += $"Email -> {email} \n Password -> {emailPassword}\n\nData Readed\n\n";
+
                 // Updates Registered Accounts
                 oleDbConnection.Open();
                 OleDbCommand registerBitCommand = new OleDbCommand("Update VoterX_AccountsTable Set Account_Registered = true Where Account_Gmail = @p1 And Account_GmailPassword = @p2", oleDbConnection);
@@ -334,13 +342,19 @@ namespace VoterX
                 registerBitCommand.ExecuteNonQuery();
                 oleDbConnection.Close();
 
+                RegisterOperationLog_RichTextBox.Text += "Registered Turned True\n\n";
+
                 // Sets The FirefoxDriver Option
                 firefoxDriverService.HideCommandPromptWindow = true;
                 firefoxDriver = new FirefoxDriver(firefoxDriverService);
 
+                RegisterOperationLog_RichTextBox.Text += "Firefox Driver Setted\n\n";
+
                 // Goes For Proxy
                 firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
                 Thread.Sleep(2000);
+
+                RegisterOperationLog_RichTextBox.Text += "Proxy Successful\n\n";
 
                 // Selects The Server
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/register");
@@ -348,6 +362,8 @@ namespace VoterX
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
                 Thread.Sleep(2000);
+
+                RegisterOperationLog_RichTextBox.Text += "Server Initialized\n\n";
 
                 // Enters Register Informations
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys(randomNames[random.Next(0, randomNames.Length - 1)] + randomLastNames[random.Next(0, randomLastNames.Length - 1)] + randomNumbers[random.Next(0, randomNumbers.Length - 1)]);
@@ -358,9 +374,13 @@ namespace VoterX
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[7]/div/input").Click();
                 Thread.Sleep(1500);
 
+                RegisterOperationLog_RichTextBox.Text += "Register Informations Entered\n\n";
+
                 // Goes To Mail For Verification Link
                 firefoxDriver.Navigate().GoToUrl("https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1628095646&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d66ef082d-9382-52c4-98a0-7168729b0378&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015");
                 Thread.Sleep(1500);
+
+                RegisterOperationLog_RichTextBox.Text += "Entered Mail For Verification \n\n";
 
                 // Email Login 
                 firefoxDriver.FindElementByXPath("//*[@id='i0116']").SendKeys(email);
@@ -372,6 +392,8 @@ namespace VoterX
                 firefoxDriver.FindElementByXPath("//*[@id='idSIButton9']").Click();
                 Thread.Sleep(1500);
 
+                RegisterOperationLog_RichTextBox.Text += "Signed In!\n\n";
+
                 // Mails
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/div/div[1]/div/div[1]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div/input").SendKeys("CoinSniper");
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/div/div[1]/div/div[1]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[1]/button/span/i").Click();
@@ -379,8 +401,12 @@ namespace VoterX
                 firefoxDriver.FindElementByXPath("//*[@id='5060efdf - 2b61 - 4ce2 - 1f77 - 590348f151fd']/div/div/div/div/div[1]").Click();
                 firefoxDriver.FindElementByXPath("//*[@id=':qq']/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/span/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/a").Click();
 
+                RegisterOperationLog_RichTextBox.Text += "Registration Finished!\n\n";
+
                 // Firefox Driver Shutdown
                 firefoxDriver.Close();
+
+                RegisterOperationLog_RichTextBox.Text += "Firefox Driver Shutted Down\n\n";
             }
         }
 

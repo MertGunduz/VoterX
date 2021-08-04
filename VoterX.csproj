@@ -104,6 +104,8 @@
     <None Include="Resources\VoterX_NonHoveredVoteCoinIcon.png" />
     <None Include="Resources\VoterX_HoveredStartIcon.png" />
     <None Include="Resources\VoterX_NonHoveredStartIcon.png" />
+    <None Include="Resources\VoterX_HoveredDatabaseIcon.png" />
+    <None Include="Resources\VoterX_NonHoveredDatabaseIcon.png" />
     <Content Include="VoterX_VoteIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -73,6 +73,16 @@ namespace VoterX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap VoterX_HoveredDatabaseIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_HoveredDatabaseIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap VoterX_HoveredExitIcon {
             get {
                 object obj = ResourceManager.GetObject("VoterX_HoveredExitIcon", resourceCulture);
@@ -136,6 +146,16 @@ namespace VoterX.Properties {
         internal static System.Drawing.Bitmap VoterX_NonHoveredAccountsIcon {
             get {
                 object obj = ResourceManager.GetObject("VoterX_NonHoveredAccountsIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VoterX_NonHoveredDatabaseIcon {
+            get {
+                object obj = ResourceManager.GetObject("VoterX_NonHoveredDatabaseIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

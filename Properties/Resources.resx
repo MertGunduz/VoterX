@@ -121,6 +121,9 @@
   <data name="VoterX_HoveredAccountsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_HoveredAccountsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="VoterX_HoveredDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_HoveredDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="VoterX_HoveredExitIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_HoveredExitIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,6 +144,9 @@
   </data>
   <data name="VoterX_NonHoveredAccountsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_NonHoveredAccountsIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VoterX_NonHoveredDatabaseIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VoterX_NonHoveredDatabaseIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoterX_NonHoveredExitIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoterX_NonHoveredExitIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -35,7 +35,10 @@ namespace VoterX
             this.MidContainer_ExpandPanel = new System.Windows.Forms.Panel();
             this.RightContainer_Panel = new System.Windows.Forms.Panel();
             this.RightContainer_ExpandPanel = new System.Windows.Forms.Panel();
-            this.Accounts_DataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.RSeperator2_Panel = new System.Windows.Forms.Panel();
+            this.InsertAccounts_Button = new System.Windows.Forms.Button();
+            this.RSeperator1_Panel = new System.Windows.Forms.Panel();
             this.Accounts_Label = new System.Windows.Forms.Label();
             this.RightContainerRightBorder_Panel = new System.Windows.Forms.Panel();
             this.RightContainerLeftBorder_Panel = new System.Windows.Forms.Panel();
@@ -94,7 +97,7 @@ namespace VoterX
             this.MidContainer_ExpandPanel.SuspendLayout();
             this.RightContainer_Panel.SuspendLayout();
             this.RightContainer_ExpandPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.MiddleContainer_Panel.SuspendLayout();
             this.MiddleContainer_ExpandPanel.SuspendLayout();
             this.VoteRichTextBox_Panel.SuspendLayout();
@@ -160,7 +163,10 @@ namespace VoterX
             // 
             // RightContainer_ExpandPanel
             // 
-            this.RightContainer_ExpandPanel.Controls.Add(this.Accounts_DataGridView);
+            this.RightContainer_ExpandPanel.Controls.Add(this.dataGridView1);
+            this.RightContainer_ExpandPanel.Controls.Add(this.RSeperator2_Panel);
+            this.RightContainer_ExpandPanel.Controls.Add(this.InsertAccounts_Button);
+            this.RightContainer_ExpandPanel.Controls.Add(this.RSeperator1_Panel);
             this.RightContainer_ExpandPanel.Controls.Add(this.Accounts_Label);
             this.RightContainer_ExpandPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RightContainer_ExpandPanel.Location = new System.Drawing.Point(2, 2);
@@ -168,14 +174,52 @@ namespace VoterX
             this.RightContainer_ExpandPanel.Size = new System.Drawing.Size(250, 372);
             this.RightContainer_ExpandPanel.TabIndex = 8;
             // 
-            // Accounts_DataGridView
+            // dataGridView1
             // 
-            this.Accounts_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Accounts_DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Accounts_DataGridView.Location = new System.Drawing.Point(0, 55);
-            this.Accounts_DataGridView.Name = "Accounts_DataGridView";
-            this.Accounts_DataGridView.Size = new System.Drawing.Size(250, 317);
-            this.Accounts_DataGridView.TabIndex = 2;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 55);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(250, 258);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // RSeperator2_Panel
+            // 
+            this.RSeperator2_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RSeperator2_Panel.Location = new System.Drawing.Point(0, 313);
+            this.RSeperator2_Panel.Name = "RSeperator2_Panel";
+            this.RSeperator2_Panel.Size = new System.Drawing.Size(250, 10);
+            this.RSeperator2_Panel.TabIndex = 16;
+            // 
+            // InsertAccounts_Button
+            // 
+            this.InsertAccounts_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.InsertAccounts_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.InsertAccounts_Button.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.InsertAccounts_Button.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.InsertAccounts_Button.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.InsertAccounts_Button.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.InsertAccounts_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InsertAccounts_Button.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.InsertAccounts_Button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.InsertAccounts_Button.Image = global::VoterX.Properties.Resources.VoterX_NonHoveredDatabaseIcon;
+            this.InsertAccounts_Button.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.InsertAccounts_Button.Location = new System.Drawing.Point(0, 323);
+            this.InsertAccounts_Button.Name = "InsertAccounts_Button";
+            this.InsertAccounts_Button.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.InsertAccounts_Button.Size = new System.Drawing.Size(250, 39);
+            this.InsertAccounts_Button.TabIndex = 15;
+            this.InsertAccounts_Button.Text = "Insert Accounts";
+            this.InsertAccounts_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.InsertAccounts_Button.UseVisualStyleBackColor = false;
+            // 
+            // RSeperator1_Panel
+            // 
+            this.RSeperator1_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.RSeperator1_Panel.Location = new System.Drawing.Point(0, 362);
+            this.RSeperator1_Panel.Name = "RSeperator1_Panel";
+            this.RSeperator1_Panel.Size = new System.Drawing.Size(250, 10);
+            this.RSeperator1_Panel.TabIndex = 12;
             // 
             // Accounts_Label
             // 
@@ -787,7 +831,7 @@ namespace VoterX
             this.MidContainer_ExpandPanel.ResumeLayout(false);
             this.RightContainer_Panel.ResumeLayout(false);
             this.RightContainer_ExpandPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.MiddleContainer_Panel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.PerformLayout();
@@ -863,7 +907,10 @@ namespace VoterX
         private System.Windows.Forms.Panel MSeperator2_Panel;
         private System.Windows.Forms.Panel VoteRichTextBox_Panel;
         private System.Windows.Forms.RichTextBox VoteOperationLog_RichTextBox;
-        private System.Windows.Forms.DataGridView Accounts_DataGridView;
+        private System.Windows.Forms.Panel RSeperator2_Panel;
+        private System.Windows.Forms.Button InsertAccounts_Button;
+        private System.Windows.Forms.Panel RSeperator1_Panel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

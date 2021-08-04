@@ -35,7 +35,7 @@ namespace VoterX
             this.MidContainer_ExpandPanel = new System.Windows.Forms.Panel();
             this.RightContainer_Panel = new System.Windows.Forms.Panel();
             this.RightContainer_ExpandPanel = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Accounts_DataGridView = new System.Windows.Forms.DataGridView();
             this.RSeperator2_Panel = new System.Windows.Forms.Panel();
             this.InsertAccounts_Button = new System.Windows.Forms.Button();
             this.RSeperator1_Panel = new System.Windows.Forms.Panel();
@@ -97,7 +97,7 @@ namespace VoterX
             this.MidContainer_ExpandPanel.SuspendLayout();
             this.RightContainer_Panel.SuspendLayout();
             this.RightContainer_ExpandPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).BeginInit();
             this.MiddleContainer_Panel.SuspendLayout();
             this.MiddleContainer_ExpandPanel.SuspendLayout();
             this.VoteRichTextBox_Panel.SuspendLayout();
@@ -163,7 +163,7 @@ namespace VoterX
             // 
             // RightContainer_ExpandPanel
             // 
-            this.RightContainer_ExpandPanel.Controls.Add(this.dataGridView1);
+            this.RightContainer_ExpandPanel.Controls.Add(this.Accounts_DataGridView);
             this.RightContainer_ExpandPanel.Controls.Add(this.RSeperator2_Panel);
             this.RightContainer_ExpandPanel.Controls.Add(this.InsertAccounts_Button);
             this.RightContainer_ExpandPanel.Controls.Add(this.RSeperator1_Panel);
@@ -174,14 +174,14 @@ namespace VoterX
             this.RightContainer_ExpandPanel.Size = new System.Drawing.Size(250, 372);
             this.RightContainer_ExpandPanel.TabIndex = 8;
             // 
-            // dataGridView1
+            // Accounts_DataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(250, 258);
-            this.dataGridView1.TabIndex = 17;
+            this.Accounts_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Accounts_DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Accounts_DataGridView.Location = new System.Drawing.Point(0, 55);
+            this.Accounts_DataGridView.Name = "Accounts_DataGridView";
+            this.Accounts_DataGridView.Size = new System.Drawing.Size(250, 258);
+            this.Accounts_DataGridView.TabIndex = 17;
             // 
             // RSeperator2_Panel
             // 
@@ -212,6 +212,9 @@ namespace VoterX
             this.InsertAccounts_Button.Text = "Insert Accounts";
             this.InsertAccounts_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.InsertAccounts_Button.UseVisualStyleBackColor = false;
+            this.InsertAccounts_Button.Click += new System.EventHandler(this.InsertAccounts_Button_Click);
+            this.InsertAccounts_Button.MouseEnter += new System.EventHandler(this.InsertAccounts_Button_MouseEnter);
+            this.InsertAccounts_Button.MouseLeave += new System.EventHandler(this.InsertAccounts_Button_MouseLeave);
             // 
             // RSeperator1_Panel
             // 
@@ -235,6 +238,8 @@ namespace VoterX
             this.Accounts_Label.TabIndex = 1;
             this.Accounts_Label.Text = "Accounts";
             this.Accounts_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Accounts_Label.MouseEnter += new System.EventHandler(this.Accounts_Label_MouseEnter);
+            this.Accounts_Label.MouseLeave += new System.EventHandler(this.Accounts_Label_MouseLeave);
             // 
             // RightContainerRightBorder_Panel
             // 
@@ -375,6 +380,8 @@ namespace VoterX
             this.StartVoting_Button.Text = "Start Voting";
             this.StartVoting_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.StartVoting_Button.UseVisualStyleBackColor = false;
+            this.StartVoting_Button.MouseEnter += new System.EventHandler(this.StartVoting_Button_MouseEnter);
+            this.StartVoting_Button.MouseLeave += new System.EventHandler(this.StartVoting_Button_MouseLeave);
             // 
             // MSeperator2_Panel
             // 
@@ -429,6 +436,8 @@ namespace VoterX
             this.VoteACoin_Label.TabIndex = 1;
             this.VoteACoin_Label.Text = "Vote A Coin";
             this.VoteACoin_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.VoteACoin_Label.MouseEnter += new System.EventHandler(this.VoteACoin_Label_MouseEnter);
+            this.VoteACoin_Label.MouseLeave += new System.EventHandler(this.VoteACoin_Label_MouseLeave);
             // 
             // MiddleContainerRightBorder_Panel
             // 
@@ -569,6 +578,8 @@ namespace VoterX
             this.RegisterAccounts_Button.Text = "Start Registration";
             this.RegisterAccounts_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RegisterAccounts_Button.UseVisualStyleBackColor = false;
+            this.RegisterAccounts_Button.MouseEnter += new System.EventHandler(this.RegisterAccounts_Button_MouseEnter);
+            this.RegisterAccounts_Button.MouseLeave += new System.EventHandler(this.RegisterAccounts_Button_MouseLeave);
             // 
             // LSeperator2_Panel
             // 
@@ -623,6 +634,8 @@ namespace VoterX
             this.RegisterAccounts_Label.TabIndex = 0;
             this.RegisterAccounts_Label.Text = "Register Accounts";
             this.RegisterAccounts_Label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.RegisterAccounts_Label.MouseEnter += new System.EventHandler(this.RegisterAccounts_Label_MouseEnter);
+            this.RegisterAccounts_Label.MouseLeave += new System.EventHandler(this.RegisterAccounts_Label_MouseLeave);
             // 
             // LeftContainerRightBorder_Panel
             // 
@@ -733,6 +746,7 @@ namespace VoterX
             this.Minimize_Button.Size = new System.Drawing.Size(41, 30);
             this.Minimize_Button.TabIndex = 7;
             this.Minimize_Button.UseVisualStyleBackColor = true;
+            this.Minimize_Button.Click += new System.EventHandler(this.Minimize_Button_Click);
             this.Minimize_Button.MouseEnter += new System.EventHandler(this.Minimize_Button_MouseEnter);
             this.Minimize_Button.MouseLeave += new System.EventHandler(this.Minimize_Button_MouseLeave);
             // 
@@ -751,6 +765,7 @@ namespace VoterX
             this.Exit_Button.Size = new System.Drawing.Size(41, 30);
             this.Exit_Button.TabIndex = 6;
             this.Exit_Button.UseVisualStyleBackColor = true;
+            this.Exit_Button.Click += new System.EventHandler(this.Exit_Button_Click);
             this.Exit_Button.MouseEnter += new System.EventHandler(this.Exit_Button_MouseEnter);
             this.Exit_Button.MouseLeave += new System.EventHandler(this.Exit_Button_MouseLeave);
             // 
@@ -831,7 +846,7 @@ namespace VoterX
             this.MidContainer_ExpandPanel.ResumeLayout(false);
             this.RightContainer_Panel.ResumeLayout(false);
             this.RightContainer_ExpandPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).EndInit();
             this.MiddleContainer_Panel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.PerformLayout();
@@ -910,7 +925,7 @@ namespace VoterX
         private System.Windows.Forms.Panel RSeperator2_Panel;
         private System.Windows.Forms.Button InsertAccounts_Button;
         private System.Windows.Forms.Panel RSeperator1_Panel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Accounts_DataGridView;
     }
 }
 

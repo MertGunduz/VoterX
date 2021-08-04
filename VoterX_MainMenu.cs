@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
+using System.IO;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using VoterX.Properties;
@@ -82,6 +83,106 @@ namespace VoterX
             TopPanelBottomBorder_Panel.BackColor = Color.FromArgb(64, 186, 91);
         }
 
+        // Register Accounts Label Hover
+        private void RegisterAccounts_Label_MouseEnter(object sender, EventArgs e)
+        {
+            RegisterAccounts_Label.Image = Resources.VoterX_HoveredRegisterIcon;
+            RegisterAccounts_Label.ForeColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void RegisterAccounts_Label_MouseLeave(object sender, EventArgs e)
+        {
+            RegisterAccounts_Label.Image = Resources.VoterX_NonHoveredRegisterIcon;
+            RegisterAccounts_Label.ForeColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // Vote A Coin Label Hover
+        private void VoteACoin_Label_MouseEnter(object sender, EventArgs e)
+        {
+            VoteACoin_Label.Image = Resources.VoterX_HoveredVoteCoinIcon;
+            VoteACoin_Label.ForeColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void VoteACoin_Label_MouseLeave(object sender, EventArgs e)
+        {
+            VoteACoin_Label.Image = Resources.VoterX_NonHoveredVoteCoinIcon;
+            VoteACoin_Label.ForeColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // Accounts Label Hover
+        private void Accounts_Label_MouseEnter(object sender, EventArgs e)
+        {
+            Accounts_Label.Image = Resources.VoterX_HoveredAccountsIcon;
+            Accounts_Label.ForeColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void Accounts_Label_MouseLeave(object sender, EventArgs e)
+        {
+            Accounts_Label.Image = Resources.VoterX_NonHoveredAccountsIcon;
+            Accounts_Label.ForeColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // Register Accounts Button Hover
+        private void RegisterAccounts_Button_MouseEnter(object sender, EventArgs e)
+        {
+            RegisterAccounts_Button.Image = Resources.VoterX_HoveredStartIcon;
+            RegisterAccounts_Button.ForeColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void RegisterAccounts_Button_MouseLeave(object sender, EventArgs e)
+        {
+            RegisterAccounts_Button.Image = Resources.VoterX_NonHoveredStartIcon;
+            RegisterAccounts_Button.ForeColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // Start Voting Button Hover
+        private void StartVoting_Button_MouseEnter(object sender, EventArgs e)
+        {
+            StartVoting_Button.Image = Resources.VoterX_HoveredStartIcon;
+            StartVoting_Button.ForeColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void StartVoting_Button_MouseLeave(object sender, EventArgs e)
+        {
+            StartVoting_Button.Image = Resources.VoterX_NonHoveredStartIcon;
+            StartVoting_Button.ForeColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // Insert Accounts Button Hover
+        private void InsertAccounts_Button_MouseEnter(object sender, EventArgs e)
+        {
+            InsertAccounts_Button.Image = Resources.VoterX_HoveredDatabaseIcon;
+            InsertAccounts_Button.ForeColor = Color.FromArgb(84, 206, 111);
+        }
+
+        private void InsertAccounts_Button_MouseLeave(object sender, EventArgs e)
+        {
+            InsertAccounts_Button.Image = Resources.VoterX_NonHoveredDatabaseIcon;
+            InsertAccounts_Button.ForeColor = Color.FromArgb(64, 186, 91);
+        }
+
+        // |-| BACKEND |-|
+        // Sets The WindowState To Minimized
+        private void Minimize_Button_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        // Exits From Application
+        private void Exit_Button_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // Database Account Insertion 
+        private void InsertAccounts_Button_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select The Accounts Text File";
+            openFileDialog.Filter = "Text File | *.txt";
+            openFileDialog.ShowDialog();
+        }
+
         // |-| METHODS |-|
         // Register Method
         private void RegisterCoinSniper()
@@ -106,7 +207,7 @@ namespace VoterX
             firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[7]/div/input").Click();
             // EMAIL VERIFICATION
         }
-       
+
         // Login & Vote Method
         private void VoteCoinSniper()
         {

@@ -42,6 +42,8 @@ namespace VoterX
 
         private void VoterX_MainMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'voterXDataSet.VoterX_AccountsTable' table. You can move, or remove it, as needed.
+            this.voterX_AccountsTableTableAdapter.Fill(this.voterXDataSet.VoterX_AccountsTable);
             oleDbConnection = new OleDbConnection(Database.databaseString);
         }
 

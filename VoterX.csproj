@@ -55,6 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
+    <Compile Include="VoterXDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VoterXDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VoterX_MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +91,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="VoterXDataSet.xsc">
+      <DependentUpon>VoterXDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VoterXDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VoterXDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VoterXDataSet.xss">
+      <DependentUpon>VoterXDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -107,6 +123,9 @@
     <None Include="Resources\VoterX_NonHoveredStartIcon.png" />
     <None Include="Resources\VoterX_HoveredDatabaseIcon.png" />
     <None Include="Resources\VoterX_NonHoveredDatabaseIcon.png" />
+    <Content Include="VoterX.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="VoterX_VoteIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

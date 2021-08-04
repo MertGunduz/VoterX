@@ -35,6 +35,16 @@ namespace VoterX
         // Database
         OleDbConnection oleDbConnection;
 
+        // Random Data
+        Random random = new Random();
+        string[] randomNames = { "John", "Elric", "Alessandro", "Giovanni", "Girolamo", "Kapsberger", "Roberto", "Marcin", "Sergey", "Francesco", "Francisco", "Tarrega", "Lopez", "Coltrane", "Luigi", "Stefano", "Gabriel", "Astrix", "Kopberg", "Sven", "Swarx", "Benjamin", "Juho", "Eino", "Jouko", "Vilho", "Ville", "Eicca", "Johnny", "Ernie", "Fluke", "Mort", "Robbie", "Andrey", "Artem", "Artemskovich", "Alphonse", "Armstrong", "Ivan", "Ivar", "Bjornson", "Selvik", "Gundry", "Bjarne", "Camila", "Isabella", "Ignacio", "Rosales", "Fernando", "Joaquin", "Dante", "Rodriguez", "Manuel", "Felipe", "Gael", "Mikhail", "Maxim", "Kiril", "Vladimirovich", "Andriy", "Aleksander", "Apostol", "Avelovich", "Bogdan", "Leon", "Paul", "Finn", "Jonah", "Wang", "Teng", "Li", "Jei", "Zhang", "Bojing", "Changpu", "Chuanli", "Dingbang", "Komojikari", "Guang", "Huan", "Jinhai", "Manchu", "Armaan", "Arjun", "Aarav", "Aditya", "Rahul", "Rakesh", "Vivaan", "Fuji", "Haru", "Haruto", "Hiroto", "Kai", "Itsuki", "Kenji", "Yaketsuku", "Yakeru", "Homura", "Shimizu", "Tenmongaku", "Antantaru", "Fujin", "Raiden", "Ryujin", "Tsukiyomi", "Takemikazuchi", "Yuuto", "Temuleenev", "Ardhamonskiv" };
+        string[] randomLastNames = { "Warbringer", "TrojanX", "Hoverman", "Deikmann", "Liebestraume", "Oboemann", "Profundo", "Sopranino", "Soprano", "Tenor", "Baritone", "Bass", "Buffo", "Schgeller", "Sirmann", "Mann", "Zweihander", "Plogat", "Execute", "Ash" };
+        string[] randomNumbers = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+
+        // Database Data
+        string gmail;
+        string gmailPassword;
+
         public VoterX_MainMenu()
         {
             InitializeComponent();
@@ -195,6 +205,12 @@ namespace VoterX
             Application.Exit();
         }
 
+        // Registration Process
+        private void RegisterAccounts_Button_Click(object sender, EventArgs e)
+        {
+            RegisterCoinSniper();
+        }
+
         // Database Account Insertion 
         private void InsertAccounts_Button_Click(object sender, EventArgs e)
         {
@@ -219,7 +235,7 @@ namespace VoterX
 
                     // Sentence Extracting
                     for (int index = 0; index < fullSentence.Length; index++)
-                    { 
+                    {
                         // Increase ReadedDigit Number Every Loop
                         readedDigit++;
 
@@ -281,25 +297,75 @@ namespace VoterX
         // Register Method
         private void RegisterCoinSniper()
         {
-            firefoxDriverService.HideCommandPromptWindow = true;
-            firefoxDriver = new FirefoxDriver(firefoxDriverService);
-            // Goes For Proxy
-            firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
-            Thread.Sleep(2000);
-            // Selects The Server
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/register");
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
-            Thread.Sleep(2000);
-            // Enters Register Informations
-            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys("From Emails Database (Related Name)");
-            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys("From Emails Database (Related E-mail)");
-            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[3]/div/input").SendKeys("From Emails Database (Related Password)");
-            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[4]/div/input").SendKeys("From Emails Database Same Password");
-            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[6]/div/label").Click();
-            firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[7]/div/input").Click();
-            // EMAIL VERIFICATION
+            int totalAccounts = 0;
+
+            oleDbConnection.Open();
+            OleDbCommand totalAccountCommand = new OleDbCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", oleDbConnection);
+            OleDbDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
+
+            while (totalAccountReader.Read())
+            {
+                totalAccounts = (int)totalAccountReader[0];
+            }
+            totalAccountReader.Close();
+            oleDbConnection.Close();
+
+            for (int i = 1; i < totalAccounts; i++)
+            {
+                // Reads Email & Password
+                oleDbConnection.Open();
+                OleDbCommand readEmailCommand = new OleDbCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", oleDbConnection);
+                readEmailCommand.Parameters.AddWithValue("@p1", i);
+                OleDbDataReader emailReader = readEmailCommand.ExecuteReader();
+
+                while (emailReader.Read())
+                {
+                    gmail = emailReader[0].ToString();
+                    gmailPassword = emailReader[1].ToString();
+                }
+                emailReader.Close();
+                oleDbConnection.Close();
+
+                // Updates Registered Accounts
+                oleDbConnection.Open();
+                OleDbCommand registerBitCommand = new OleDbCommand("Update VoterX_AccountsTable Set Account_Registered = true Where Account_Gmail = @p1 And Account_GmailPassword = @p2", oleDbConnection);
+                registerBitCommand.Parameters.AddWithValue("@p1", gmail);
+                registerBitCommand.Parameters.AddWithValue("@p2", gmailPassword);
+                registerBitCommand.ExecuteNonQuery();
+                oleDbConnection.Close();
+
+                // Sets The FirefoxDriver Options
+                firefoxDriverService.HideCommandPromptWindow = true;
+                firefoxDriver = new FirefoxDriver(firefoxDriverService);
+
+                // Goes For Proxy
+                firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
+                Thread.Sleep(2000);
+
+                // Selects The Server
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/register");
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
+                Thread.Sleep(2000);
+
+                // Enters Register Informations
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys(randomNames[random.Next(0, randomNames.Length - 1)] + randomLastNames[random.Next(0, randomLastNames.Length - 1)] + randomNumbers[random.Next(0, randomNumbers.Length - 1)]);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys(gmail);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[3]/div/input").SendKeys(gmailPassword);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[4]/div/input").SendKeys(gmailPassword);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[6]/div/label").Click();
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[7]/div/input").Click();
+                Thread.Sleep(1500);
+
+                // Goes To Mail For Verification Link
+                firefoxDriver.Navigate().GoToUrl("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin");
+                Thread.Sleep(1500);
+                firefoxDriver.FindElementByXPath("//*[@id='identifierId']").SendKeys(gmail);
+                firefoxDriver.FindElementByXPath("/html/body/div[1]/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[2]/div/div[1]/div/div/button/span").Click();
+                Thread.Sleep(500);
+                    
+            }
         }
 
         // Login & Vote Method

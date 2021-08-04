@@ -94,7 +94,6 @@ namespace VoterX
             this.TopPanelBottomBorder_Panel = new System.Windows.Forms.Panel();
             this.TopPanelTopBorder_Panel = new System.Windows.Forms.Panel();
             this.voterXDataSet = new VoterX.VoterXDataSet();
-            this.voterXAccountsTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.voterX_AccountsTableTableAdapter = new VoterX.VoterXDataSetTableAdapters.VoterX_AccountsTableTableAdapter();
             this.accountIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountGmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +101,7 @@ namespace VoterX
             this.accountRambleRuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountRambleRuPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountRegisteredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.voterXAccountsTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Mid_Panel.SuspendLayout();
             this.MidContainer_Panel.SuspendLayout();
             this.MidContainer_ExpandPanel.SuspendLayout();
@@ -118,7 +118,7 @@ namespace VoterX
             this.WindowState_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.voterXDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Mid_Panel
@@ -198,7 +198,7 @@ namespace VoterX
             this.accountRambleRuDataGridViewTextBoxColumn,
             this.accountRambleRuPasswordDataGridViewTextBoxColumn,
             this.accountRegisteredDataGridViewCheckBoxColumn});
-            this.Accounts_DataGridView.DataSource = this.voterXAccountsTableBindingSource;
+            this.Accounts_DataGridView.DataSource = this.voterXAccountsTableBindingSource1;
             this.Accounts_DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Accounts_DataGridView.Location = new System.Drawing.Point(0, 55);
             this.Accounts_DataGridView.Name = "Accounts_DataGridView";
@@ -600,6 +600,7 @@ namespace VoterX
             this.RegisterAccounts_Button.Text = "Start Registration";
             this.RegisterAccounts_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RegisterAccounts_Button.UseVisualStyleBackColor = false;
+            this.RegisterAccounts_Button.Click += new System.EventHandler(this.RegisterAccounts_Button_Click);
             this.RegisterAccounts_Button.MouseEnter += new System.EventHandler(this.RegisterAccounts_Button_MouseEnter);
             this.RegisterAccounts_Button.MouseLeave += new System.EventHandler(this.RegisterAccounts_Button_MouseLeave);
             // 
@@ -857,11 +858,6 @@ namespace VoterX
             this.voterXDataSet.DataSetName = "VoterXDataSet";
             this.voterXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // voterXAccountsTableBindingSource
-            // 
-            this.voterXAccountsTableBindingSource.DataMember = "VoterX_AccountsTable";
-            this.voterXAccountsTableBindingSource.DataSource = this.voterXDataSet;
-            // 
             // voterX_AccountsTableTableAdapter
             // 
             this.voterX_AccountsTableTableAdapter.ClearBeforeFill = true;
@@ -908,6 +904,11 @@ namespace VoterX
             this.accountRegisteredDataGridViewCheckBoxColumn.Name = "accountRegisteredDataGridViewCheckBoxColumn";
             this.accountRegisteredDataGridViewCheckBoxColumn.Width = 118;
             // 
+            // voterXAccountsTableBindingSource1
+            // 
+            this.voterXAccountsTableBindingSource1.DataMember = "VoterX_AccountsTable";
+            this.voterXAccountsTableBindingSource1.DataSource = this.voterXDataSet;
+            // 
             // VoterX_MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -938,7 +939,7 @@ namespace VoterX
             this.WindowState_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.voterXDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1008,7 +1009,6 @@ namespace VoterX
         private System.Windows.Forms.Panel RSeperator1_Panel;
         private System.Windows.Forms.DataGridView Accounts_DataGridView;
         private VoterXDataSet voterXDataSet;
-        private System.Windows.Forms.BindingSource voterXAccountsTableBindingSource;
         private VoterXDataSetTableAdapters.VoterX_AccountsTableTableAdapter voterX_AccountsTableTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn accountIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn accountGmailDataGridViewTextBoxColumn;
@@ -1016,6 +1016,7 @@ namespace VoterX
         private System.Windows.Forms.DataGridViewTextBoxColumn accountRambleRuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn accountRambleRuPasswordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn accountRegisteredDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource voterXAccountsTableBindingSource1;
     }
 }
 

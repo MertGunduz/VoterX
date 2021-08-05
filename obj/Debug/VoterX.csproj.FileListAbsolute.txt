@@ -12,3 +12,7 @@ C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.exe
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.pdb
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.AssemblyReference.cache
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.accdb
+C:\Users\u\source\repos\VoterX\bin\Debug\Newtonsoft.Json.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\Newtonsoft.Json.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\System.Net.Http.Formatting.xml

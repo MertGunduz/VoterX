@@ -1,10 +1,10 @@
-﻿using OpenQA.Selenium.Firefox;
-using System;
+﻿using System;
 using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using OpenQA.Selenium.Firefox;
 using VoterX.Properties;
 
 namespace VoterX
@@ -45,7 +45,6 @@ namespace VoterX
 
         private void VoterX_MainMenu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'voterXDataSet.VoterX_AccountsTable' table. You can move, or remove it, as needed.
             this.voterX_AccountsTableTableAdapter.Fill(this.voterXDataSet.VoterX_AccountsTable);
             oleDbConnection = new OleDbConnection(Database.databaseString);
         }
@@ -94,7 +93,7 @@ namespace VoterX
         private void TopLogo_PictureBox_MouseEnter(object sender, EventArgs e)
         {
             TopLogo_PictureBox.Image = Resources.VoterX_HoveredVoteIcon;
-            TopHeader_Label.ForeColor = Color.FromArgb(84, 206, 111);
+            TopHeader_Label.ForeColor = Color.FromArgb(84, 206, 111); 
             TopPanelTopBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
             TopPanelBottomBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
         }

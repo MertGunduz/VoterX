@@ -37,6 +37,14 @@ namespace VoterX
             this.RightContainer_Panel = new System.Windows.Forms.Panel();
             this.RightContainer_ExpandPanel = new System.Windows.Forms.Panel();
             this.Accounts_DataGridView = new System.Windows.Forms.DataGridView();
+            this.accountIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountGmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountGmailPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountRambleRuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountRambleRuPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountRegisteredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.voterXAccountsTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.voterXDataSet = new VoterX.VoterXDataSet();
             this.RSeperator2_Panel = new System.Windows.Forms.Panel();
             this.InsertAccounts_Button = new System.Windows.Forms.Button();
             this.RSeperator1_Panel = new System.Windows.Forms.Panel();
@@ -50,7 +58,7 @@ namespace VoterX
             this.MiddleContainer_ExpandPanel = new System.Windows.Forms.Panel();
             this.VoteQuantity_TextBox = new System.Windows.Forms.TextBox();
             this.MSeperator4_Panel = new System.Windows.Forms.Panel();
-            this.VotingSpeed_TextBox = new System.Windows.Forms.TextBox();
+            this.CoinName_TextBox = new System.Windows.Forms.TextBox();
             this.MSeperator3_Panel = new System.Windows.Forms.Panel();
             this.StartVoting_Button = new System.Windows.Forms.Button();
             this.MSeperator2_Panel = new System.Windows.Forms.Panel();
@@ -93,21 +101,15 @@ namespace VoterX
             this.TopLogo_PictureBox = new System.Windows.Forms.PictureBox();
             this.TopPanelBottomBorder_Panel = new System.Windows.Forms.Panel();
             this.TopPanelTopBorder_Panel = new System.Windows.Forms.Panel();
-            this.voterXDataSet = new VoterX.VoterXDataSet();
             this.voterX_AccountsTableTableAdapter = new VoterX.VoterXDataSetTableAdapters.VoterX_AccountsTableTableAdapter();
-            this.accountIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountGmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountGmailPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountRambleRuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountRambleRuPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountRegisteredDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.voterXAccountsTableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Mid_Panel.SuspendLayout();
             this.MidContainer_Panel.SuspendLayout();
             this.MidContainer_ExpandPanel.SuspendLayout();
             this.RightContainer_Panel.SuspendLayout();
             this.RightContainer_ExpandPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXDataSet)).BeginInit();
             this.MiddleContainer_Panel.SuspendLayout();
             this.MiddleContainer_ExpandPanel.SuspendLayout();
             this.VoteRichTextBox_Panel.SuspendLayout();
@@ -117,8 +119,6 @@ namespace VoterX
             this.Top_Panel.SuspendLayout();
             this.WindowState_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voterXDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Mid_Panel
@@ -204,6 +204,58 @@ namespace VoterX
             this.Accounts_DataGridView.Name = "Accounts_DataGridView";
             this.Accounts_DataGridView.Size = new System.Drawing.Size(250, 258);
             this.Accounts_DataGridView.TabIndex = 17;
+            // 
+            // accountIDDataGridViewTextBoxColumn
+            // 
+            this.accountIDDataGridViewTextBoxColumn.DataPropertyName = "Account_ID";
+            this.accountIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.accountIDDataGridViewTextBoxColumn.Name = "accountIDDataGridViewTextBoxColumn";
+            this.accountIDDataGridViewTextBoxColumn.Width = 52;
+            // 
+            // accountGmailDataGridViewTextBoxColumn
+            // 
+            this.accountGmailDataGridViewTextBoxColumn.DataPropertyName = "Account_Gmail";
+            this.accountGmailDataGridViewTextBoxColumn.HeaderText = "GMAIL";
+            this.accountGmailDataGridViewTextBoxColumn.Name = "accountGmailDataGridViewTextBoxColumn";
+            this.accountGmailDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // accountGmailPasswordDataGridViewTextBoxColumn
+            // 
+            this.accountGmailPasswordDataGridViewTextBoxColumn.DataPropertyName = "Account_GmailPassword";
+            this.accountGmailPasswordDataGridViewTextBoxColumn.HeaderText = "GMAIL PASSWORD";
+            this.accountGmailPasswordDataGridViewTextBoxColumn.Name = "accountGmailPasswordDataGridViewTextBoxColumn";
+            this.accountGmailPasswordDataGridViewTextBoxColumn.Width = 166;
+            // 
+            // accountRambleRuDataGridViewTextBoxColumn
+            // 
+            this.accountRambleRuDataGridViewTextBoxColumn.DataPropertyName = "Account_RambleRu";
+            this.accountRambleRuDataGridViewTextBoxColumn.HeaderText = "RAMBLERU";
+            this.accountRambleRuDataGridViewTextBoxColumn.Name = "accountRambleRuDataGridViewTextBoxColumn";
+            this.accountRambleRuDataGridViewTextBoxColumn.Width = 119;
+            // 
+            // accountRambleRuPasswordDataGridViewTextBoxColumn
+            // 
+            this.accountRambleRuPasswordDataGridViewTextBoxColumn.DataPropertyName = "Account_RambleRuPassword";
+            this.accountRambleRuPasswordDataGridViewTextBoxColumn.HeaderText = "RAMBLERU PASSWORD";
+            this.accountRambleRuPasswordDataGridViewTextBoxColumn.Name = "accountRambleRuPasswordDataGridViewTextBoxColumn";
+            this.accountRambleRuPasswordDataGridViewTextBoxColumn.Width = 193;
+            // 
+            // accountRegisteredDataGridViewCheckBoxColumn
+            // 
+            this.accountRegisteredDataGridViewCheckBoxColumn.DataPropertyName = "Account_Registered";
+            this.accountRegisteredDataGridViewCheckBoxColumn.HeaderText = "IS REGISTERED CS";
+            this.accountRegisteredDataGridViewCheckBoxColumn.Name = "accountRegisteredDataGridViewCheckBoxColumn";
+            this.accountRegisteredDataGridViewCheckBoxColumn.Width = 137;
+            // 
+            // voterXAccountsTableBindingSource1
+            // 
+            this.voterXAccountsTableBindingSource1.DataMember = "VoterX_AccountsTable";
+            this.voterXAccountsTableBindingSource1.DataSource = this.voterXDataSet;
+            // 
+            // voterXDataSet
+            // 
+            this.voterXDataSet.DataSetName = "VoterXDataSet";
+            this.voterXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RSeperator2_Panel
             // 
@@ -326,7 +378,7 @@ namespace VoterX
             // 
             this.MiddleContainer_ExpandPanel.Controls.Add(this.VoteQuantity_TextBox);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator4_Panel);
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.VotingSpeed_TextBox);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.CoinName_TextBox);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator3_Panel);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.StartVoting_Button);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator2_Panel);
@@ -360,18 +412,18 @@ namespace VoterX
             this.MSeperator4_Panel.Size = new System.Drawing.Size(249, 10);
             this.MSeperator4_Panel.TabIndex = 17;
             // 
-            // VotingSpeed_TextBox
+            // CoinName_TextBox
             // 
-            this.VotingSpeed_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.VotingSpeed_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VotingSpeed_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.VotingSpeed_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.VotingSpeed_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.VotingSpeed_TextBox.Location = new System.Drawing.Point(0, 92);
-            this.VotingSpeed_TextBox.Name = "VotingSpeed_TextBox";
-            this.VotingSpeed_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.VotingSpeed_TextBox.TabIndex = 16;
-            this.VotingSpeed_TextBox.Text = "  Voting Speed ->";
+            this.CoinName_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.CoinName_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CoinName_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CoinName_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CoinName_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.CoinName_TextBox.Location = new System.Drawing.Point(0, 92);
+            this.CoinName_TextBox.Name = "CoinName_TextBox";
+            this.CoinName_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.CoinName_TextBox.TabIndex = 16;
+            this.CoinName_TextBox.Text = "  Coin Name ->";
             // 
             // MSeperator3_Panel
             // 
@@ -402,6 +454,7 @@ namespace VoterX
             this.StartVoting_Button.Text = "Start Voting";
             this.StartVoting_Button.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.StartVoting_Button.UseVisualStyleBackColor = false;
+            this.StartVoting_Button.Click += new System.EventHandler(this.StartVoting_Button_Click);
             this.StartVoting_Button.MouseEnter += new System.EventHandler(this.StartVoting_Button_MouseEnter);
             this.StartVoting_Button.MouseLeave += new System.EventHandler(this.StartVoting_Button_MouseLeave);
             // 
@@ -853,61 +906,9 @@ namespace VoterX
             this.TopPanelTopBorder_Panel.Size = new System.Drawing.Size(800, 2);
             this.TopPanelTopBorder_Panel.TabIndex = 0;
             // 
-            // voterXDataSet
-            // 
-            this.voterXDataSet.DataSetName = "VoterXDataSet";
-            this.voterXDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // voterX_AccountsTableTableAdapter
             // 
             this.voterX_AccountsTableTableAdapter.ClearBeforeFill = true;
-            // 
-            // accountIDDataGridViewTextBoxColumn
-            // 
-            this.accountIDDataGridViewTextBoxColumn.DataPropertyName = "Account_ID";
-            this.accountIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.accountIDDataGridViewTextBoxColumn.Name = "accountIDDataGridViewTextBoxColumn";
-            this.accountIDDataGridViewTextBoxColumn.Width = 52;
-            // 
-            // accountGmailDataGridViewTextBoxColumn
-            // 
-            this.accountGmailDataGridViewTextBoxColumn.DataPropertyName = "Account_Gmail";
-            this.accountGmailDataGridViewTextBoxColumn.HeaderText = "GMAIL";
-            this.accountGmailDataGridViewTextBoxColumn.Name = "accountGmailDataGridViewTextBoxColumn";
-            this.accountGmailDataGridViewTextBoxColumn.Width = 89;
-            // 
-            // accountGmailPasswordDataGridViewTextBoxColumn
-            // 
-            this.accountGmailPasswordDataGridViewTextBoxColumn.DataPropertyName = "Account_GmailPassword";
-            this.accountGmailPasswordDataGridViewTextBoxColumn.HeaderText = "GMAIL PASSWORD";
-            this.accountGmailPasswordDataGridViewTextBoxColumn.Name = "accountGmailPasswordDataGridViewTextBoxColumn";
-            this.accountGmailPasswordDataGridViewTextBoxColumn.Width = 166;
-            // 
-            // accountRambleRuDataGridViewTextBoxColumn
-            // 
-            this.accountRambleRuDataGridViewTextBoxColumn.DataPropertyName = "Account_RambleRu";
-            this.accountRambleRuDataGridViewTextBoxColumn.HeaderText = "RAMBLERU";
-            this.accountRambleRuDataGridViewTextBoxColumn.Name = "accountRambleRuDataGridViewTextBoxColumn";
-            this.accountRambleRuDataGridViewTextBoxColumn.Width = 119;
-            // 
-            // accountRambleRuPasswordDataGridViewTextBoxColumn
-            // 
-            this.accountRambleRuPasswordDataGridViewTextBoxColumn.DataPropertyName = "Account_RambleRuPassword";
-            this.accountRambleRuPasswordDataGridViewTextBoxColumn.HeaderText = "RAMBLERU PASSWORD";
-            this.accountRambleRuPasswordDataGridViewTextBoxColumn.Name = "accountRambleRuPasswordDataGridViewTextBoxColumn";
-            this.accountRambleRuPasswordDataGridViewTextBoxColumn.Width = 193;
-            // 
-            // accountRegisteredDataGridViewCheckBoxColumn
-            // 
-            this.accountRegisteredDataGridViewCheckBoxColumn.DataPropertyName = "Account_Registered";
-            this.accountRegisteredDataGridViewCheckBoxColumn.HeaderText = "IS REGISTERED CS";
-            this.accountRegisteredDataGridViewCheckBoxColumn.Name = "accountRegisteredDataGridViewCheckBoxColumn";
-            this.accountRegisteredDataGridViewCheckBoxColumn.Width = 118;
-            // 
-            // voterXAccountsTableBindingSource1
-            // 
-            this.voterXAccountsTableBindingSource1.DataMember = "VoterX_AccountsTable";
-            this.voterXAccountsTableBindingSource1.DataSource = this.voterXDataSet;
             // 
             // VoterX_MainMenu
             // 
@@ -927,6 +928,8 @@ namespace VoterX
             this.RightContainer_Panel.ResumeLayout(false);
             this.RightContainer_ExpandPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Accounts_DataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXDataSet)).EndInit();
             this.MiddleContainer_Panel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.ResumeLayout(false);
             this.MiddleContainer_ExpandPanel.PerformLayout();
@@ -938,8 +941,6 @@ namespace VoterX
             this.Top_Panel.ResumeLayout(false);
             this.WindowState_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voterXDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -998,7 +999,7 @@ namespace VoterX
         private System.Windows.Forms.Panel LSeperator1_Panel;
         private System.Windows.Forms.TextBox VoteQuantity_TextBox;
         private System.Windows.Forms.Panel MSeperator4_Panel;
-        private System.Windows.Forms.TextBox VotingSpeed_TextBox;
+        private System.Windows.Forms.TextBox CoinName_TextBox;
         private System.Windows.Forms.Panel MSeperator3_Panel;
         private System.Windows.Forms.Button StartVoting_Button;
         private System.Windows.Forms.Panel MSeperator2_Panel;

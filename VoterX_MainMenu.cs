@@ -203,6 +203,12 @@ namespace VoterX
             RegisterCoinSniper();
         }
 
+        // Voting Process
+        private void StartVoting_Button_Click(object sender, EventArgs e)
+        {
+            VoteCoinSniper();
+        }
+
         // Database Account Insertion 
         private void InsertAccounts_Button_Click(object sender, EventArgs e)
         {
@@ -405,15 +411,24 @@ namespace VoterX
         // Login & Vote Method
         private void VoteCoinSniper()
         {
+            // Sets The Options of Gecko Driver
             firefoxDriverService.HideCommandPromptWindow = true;
             firefoxDriver = new FirefoxDriver(firefoxDriverService);
+            
             // Goes For Proxy
             firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
             Thread.Sleep(2000);
+            
             // Selects The Server
             firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/login");
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
+            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
+
+            // Login SQL
             // Search Coin
             // Click Coin
+            // Recaptcha API
         }
     }
 }

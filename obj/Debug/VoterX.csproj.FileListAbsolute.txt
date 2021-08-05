@@ -1,8 +1,14 @@
+C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.accdb
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.exe.config
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.exe
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.pdb
+C:\Users\u\source\repos\VoterX\bin\Debug\Newtonsoft.Json.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\u\source\repos\VoterX\bin\Debug\WebDriver.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\Newtonsoft.Json.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\u\source\repos\VoterX\bin\Debug\WebDriver.xml
+C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.AssemblyReference.cache
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.VoterX_MainMenu.resources
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.Properties.Resources.resources
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.GenerateResource.cache
@@ -10,9 +16,3 @@ C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.CoreCompileInputs.cache
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.CopyComplete
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.exe
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.pdb
-C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.AssemblyReference.cache
-C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.accdb
-C:\Users\u\source\repos\VoterX\bin\Debug\Newtonsoft.Json.dll
-C:\Users\u\source\repos\VoterX\bin\Debug\System.Net.Http.Formatting.dll
-C:\Users\u\source\repos\VoterX\bin\Debug\Newtonsoft.Json.xml
-C:\Users\u\source\repos\VoterX\bin\Debug\System.Net.Http.Formatting.xml

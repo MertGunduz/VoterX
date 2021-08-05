@@ -93,7 +93,7 @@ namespace VoterX
         private void TopLogo_PictureBox_MouseEnter(object sender, EventArgs e)
         {
             TopLogo_PictureBox.Image = Resources.VoterX_HoveredVoteIcon;
-            TopHeader_Label.ForeColor = Color.FromArgb(84, 206, 111); 
+            TopHeader_Label.ForeColor = Color.FromArgb(84, 206, 111);
             TopPanelTopBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
             TopPanelBottomBorder_Panel.BackColor = Color.FromArgb(84, 206, 111);
         }
@@ -414,11 +414,11 @@ namespace VoterX
             // Sets The Options of Gecko Driver
             firefoxDriverService.HideCommandPromptWindow = true;
             firefoxDriver = new FirefoxDriver(firefoxDriverService);
-            
+
             // Goes For Proxy
             firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
             Thread.Sleep(2000);
-            
+
             // Selects The Server
             firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/login");
             firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
@@ -428,7 +428,7 @@ namespace VoterX
             // Login SQL
             // Search Coin
             // Click Coin
-            // Recaptcha API
+            // Recaptcha API 
         }
     }
 }

@@ -411,24 +411,60 @@ namespace VoterX
         // Login & Vote Method
         private void VoteCoinSniper()
         {
-            // Sets The Options of Gecko Driver
-            firefoxDriverService.HideCommandPromptWindow = true;
-            firefoxDriver = new FirefoxDriver(firefoxDriverService);
+            // Reads Total Accounts
+            int totalAccounts = 0;
 
-            // Goes For Proxy
-            firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
-            Thread.Sleep(2000);
+            oleDbConnection.Open();
+            OleDbCommand totalAccountCommand = new OleDbCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", oleDbConnection);
+            OleDbDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
 
-            // Selects The Server
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/login");
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
-            firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
+            while (totalAccountReader.Read())
+            {
+                totalAccounts = (int)totalAccountReader[0];
+            }
+            totalAccountReader.Close();
+            oleDbConnection.Close();
 
-            // Login SQL
-            // Search Coin
-            // Click Coin
-            // Recaptcha API 
+            for (int i = 1; i < totalAccounts; i++)
+            {
+                // Reads Email & Password
+                oleDbConnection.Open();
+                OleDbCommand readEmailCommand = new OleDbCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", oleDbConnection);
+                readEmailCommand.Parameters.AddWithValue("@p1", i);
+                OleDbDataReader emailReader = readEmailCommand.ExecuteReader();
+
+                while (emailReader.Read())
+                {
+                    email = emailReader[0].ToString();
+                    emailPassword = emailReader[1].ToString();
+                }
+                emailReader.Close();
+                oleDbConnection.Close();
+
+                // Sets The Options of Gecko Driver
+                firefoxDriverService.HideCommandPromptWindow = true;
+                firefoxDriver = new FirefoxDriver(firefoxDriverService);
+
+                // Goes For Proxy
+                firefoxDriver.Navigate().GoToUrl("https://www.proxysite.com/");
+                Thread.Sleep(2000);
+
+                // Selects The Server
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/login");
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
+                Thread.Sleep(1000);
+
+                // Logins To CoinSniper
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys(email);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys(emailPassword);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[3]/div/input").Click();
+                Thread.Sleep(1000);
+                // Search Coin
+                // Click Coin
+                // Recaptcha API 
+            }
         }
     }
 }

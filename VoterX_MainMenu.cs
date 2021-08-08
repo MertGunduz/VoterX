@@ -463,8 +463,9 @@ namespace VoterX
                 Thread.Sleep(1000);
 
                 // Search Coin
-                firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[1]/input").SendKeys();
+                firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[1]/input").SendKeys(CoinName_TextBox.Text);
                 // Click Coin
+                firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[2]/a[1]").Click();
                 // Recaptcha API 
             }
         }

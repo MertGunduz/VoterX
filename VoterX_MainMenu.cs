@@ -210,86 +210,86 @@ namespace VoterX
         }
 
         // Database Account Insertion 
-        private void InsertAccounts_Button_Click(object sender, EventArgs e)
-        {
-            // Sets The OpenFileDialog Settings
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Title = "Select The Accounts Text File";
-            openFileDialog.Filter = "Text File | *.txt";
-
-            // Opens OpenFileDialog 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            private void InsertAccounts_Button_Click(object sender, EventArgs e)
             {
-                // Gets The FilePath
-                string filePath = openFileDialog.FileName;
+                // Sets The OpenFileDialog Settings
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Title = "Select The Accounts Text File";
+                openFileDialog.Filter = "Text File | *.txt";
 
-                // Reads The File And Assigns The Sentences To AccountTextData
-                string[] accountTextData = File.ReadAllLines(filePath);
-
-                for (int i = 0; i < accountTextData.Length; i++)
+                // Opens OpenFileDialog 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Takes A Account Sentence From Array To Extract Data
-                    fullSentence = accountTextData[i];
+                    // Gets The FilePath
+                    string filePath = openFileDialog.FileName;
 
-                    // Sentence Extracting
-                    for (int index = 0; index < fullSentence.Length; index++)
+                    // Reads The File And Assigns The Sentences To AccountTextData
+                    string[] accountTextData = File.ReadAllLines(filePath);
+
+                    for (int i = 0; i < accountTextData.Length; i++)
                     {
-                        // Increase ReadedDigit Number Every Loop
-                        readedDigit++;
+                        // Takes A Account Sentence From Array To Extract Data
+                        fullSentence = accountTextData[i];
 
-                        if (fullSentence[index].ToString() != ":")
+                        // Sentence Extracting
+                        for (int index = 0; index < fullSentence.Length; index++)
                         {
-                            extractedText = extractedText + fullSentence[index].ToString();
+                            // Increase ReadedDigit Number Every Loop
+                            readedDigit++;
 
-                            if (readedDigit == fullSentence.Length)
+                            if (fullSentence[index].ToString() != ":")
                             {
-                                // Every New Sentence Makes It 0
-                                readedDigit = 0;
-                                colonRepeat = 0;
+                                extractedText = extractedText + fullSentence[index].ToString();
 
-                                accountRamblerRuPassword = extractedText;
-                                extractedText = "";
+                                if (readedDigit == fullSentence.Length)
+                                {
+                                    // Every New Sentence Makes It 0
+                                    readedDigit = 0;
+                                    colonRepeat = 0;
 
-                                //  OLEDB
-                                oleDbConnection.Open();
-                                OleDbCommand insertAccountCommand = new OleDbCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", oleDbConnection);
-                                insertAccountCommand.Parameters.AddWithValue("@p1", accountGmail);
-                                insertAccountCommand.Parameters.AddWithValue("@p2", accountGmailPassword);
-                                insertAccountCommand.Parameters.AddWithValue("@p3", accountRamblerRu);
-                                insertAccountCommand.Parameters.AddWithValue("@p4", accountRamblerRuPassword);
-                                insertAccountCommand.ExecuteNonQuery();
-                                oleDbConnection.Close();
+                                    accountRamblerRuPassword = extractedText;
+                                    extractedText = "";
 
-                                accountGmail = "";
-                                accountGmailPassword = "";
-                                accountRamblerRu = "";
-                                accountRamblerRuPassword = "";
+                                    //  OLEDB
+                                    oleDbConnection.Open();
+                                    OleDbCommand insertAccountCommand = new OleDbCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", oleDbConnection);
+                                    insertAccountCommand.Parameters.AddWithValue("@p1", accountGmail);
+                                    insertAccountCommand.Parameters.AddWithValue("@p2", accountGmailPassword);
+                                    insertAccountCommand.Parameters.AddWithValue("@p3", accountRamblerRu);
+                                    insertAccountCommand.Parameters.AddWithValue("@p4", accountRamblerRuPassword);
+                                    insertAccountCommand.ExecuteNonQuery();
+                                    oleDbConnection.Close();
+
+                                    accountGmail = "";
+                                    accountGmailPassword = "";
+                                    accountRamblerRu = "";
+                                    accountRamblerRuPassword = "";
+                                }
                             }
-                        }
-                        else
-                        {
-                            colonRepeat++;
+                            else
+                            {
+                                colonRepeat++;
 
-                            if (colonRepeat == 1)
-                            {
-                                accountGmail = extractedText;
-                                extractedText = "";
-                            }
-                            else if (colonRepeat == 2)
-                            {
-                                accountGmailPassword = extractedText;
-                                extractedText = "";
-                            }
-                            else if (colonRepeat == 3)
-                            {
-                                accountRamblerRu = extractedText;
-                                extractedText = "";
+                                if (colonRepeat == 1)
+                                {
+                                    accountGmail = extractedText;
+                                    extractedText = "";
+                                }
+                                else if (colonRepeat == 2)
+                                {
+                                    accountGmailPassword = extractedText;
+                                    extractedText = "";
+                                }
+                                else if (colonRepeat == 3)
+                                {
+                                    accountRamblerRu = extractedText;
+                                    extractedText = "";
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
         // |-| METHODS |-|
         // Register Method
@@ -461,7 +461,9 @@ namespace VoterX
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys(emailPassword);
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[3]/div/input").Click();
                 Thread.Sleep(1000);
+
                 // Search Coin
+                firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[1]/input").SendKeys();
                 // Click Coin
                 // Recaptcha API 
             }

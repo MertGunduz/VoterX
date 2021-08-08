@@ -10,7 +10,7 @@ using VoterX.Properties;
 namespace VoterX
 {
     public partial class VoterX_MainMenu : Form
-    {
+    {        
         // Selenium Web Driver
         FirefoxDriver firefoxDriver;
         FirefoxDriverService firefoxDriverService = FirefoxDriverService.CreateDefaultService();

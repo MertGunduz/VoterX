@@ -297,12 +297,13 @@ namespace VoterX
         {
             // Writes A Start Log
             RegisterOperationLog_RichTextBox.Clear();
-            RegisterOperationLog_RichTextBox.Text += "|-------------------|\n";
+            RegisterOperationLog_RichTextBox.Text += "|-------------------------------|\n";
             RegisterOperationLog_RichTextBox.Text += "| Operation Started |\n";
-            RegisterOperationLog_RichTextBox.Text += "|-------------------|\n\n";
+            RegisterOperationLog_RichTextBox.Text += "|-------------------------------|\n\n";
 
             int totalAccounts = 0;
 
+            // Reads The Account Quantity
             oleDbConnection.Open();
             OleDbCommand totalAccountCommand = new OleDbCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", oleDbConnection);
             OleDbDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
@@ -381,28 +382,39 @@ namespace VoterX
                 RegisterOperationLog_RichTextBox.Text += "Entered Mail For Verification \n\n";
 
                 // Email Login 
-                firefoxDriver.FindElementByXPath("//*[@id='i0116']").SendKeys(email);
+                firefoxDriver.FindElementByXPath("//*[@id='i0116']").SendKeys(email); // Email
                 firefoxDriver.FindElementByXPath("//*[@id='idSIButton9']").Click();
                 Thread.Sleep(500);
 
                 // Password Login
-                firefoxDriver.FindElementByXPath("//*[@id='i0118']").SendKeys(emailPassword);
+                firefoxDriver.FindElementByXPath("//*[@id='i0118']").SendKeys(emailPassword); // EmailPassword
                 firefoxDriver.FindElementByXPath("//*[@id='idSIButton9']").Click();
-                Thread.Sleep(1500);
+                Thread.Sleep(500);
 
                 RegisterOperationLog_RichTextBox.Text += "Signed In!\n\n";
 
-                // Mails
+                // Open Account Cookie
+                firefoxDriver.FindElementByXPath("//*[@id='idBtn_Back']").Click();
+                Thread.Sleep(2500);
+
+
+                // Find CoinSniper Mail
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/div/div[1]/div/div[1]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div").Click();
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/div/div[1]/div/div[1]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[1]/div/div[2]/div/input").SendKeys("CoinSniper");
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/div/div[1]/div/div[1]/div[2]/div/div/div/div/div[1]/div[2]/div/div/div/div/div[1]/button/span/i").Click();
                 Thread.Sleep(1000);
-                firefoxDriver.FindElementByXPath("//*[@id='5060efdf - 2b61 - 4ce2 - 1f77 - 590348f151fd']/div/div/div/div/div[1]").Click();
-                firefoxDriver.FindElementByXPath("//*[@id=':qq']/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/span/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/a").Click();
+
+                // Open CoinSniper Mail & Verify
+                firefoxDriver.FindElementByClassName("_1y3FkDsOHuxLnfkzQ8Dx7o").Click();
+                Thread.Sleep(400);
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/div/div[2]/div[2]/div[1]/div/div/div[3]/div[2]/div/div[2]/div/div/div/div/div[2]/div[1]/div/div/div[3]/div/div/div/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table[1]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/a").Click();
+                Thread.Sleep(1000);
 
                 RegisterOperationLog_RichTextBox.Text += "Registration Finished!\n\n";
 
                 // Firefox Driver Shutdown
                 firefoxDriver.Close();
+                firefoxDriver.Quit();
 
                 RegisterOperationLog_RichTextBox.Text += "Firefox Driver Shutted Down\n\n";
             }

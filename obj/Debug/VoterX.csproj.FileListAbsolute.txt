@@ -16,3 +16,8 @@ C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.CoreCompileInputs.cache
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.csproj.CopyComplete
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.exe
 C:\Users\u\source\repos\VoterX\obj\Debug\VoterX.pdb
+C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.Http.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.pdb
+C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.Http.pdb

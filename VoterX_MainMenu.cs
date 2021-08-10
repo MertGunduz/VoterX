@@ -10,7 +10,7 @@ using VoterX.Properties;
 namespace VoterX
 {
     public partial class VoterX_MainMenu : Form
-    {        
+    {
         // Selenium Web Driver
         FirefoxDriver firefoxDriver;
         FirefoxDriverService firefoxDriverService = FirefoxDriverService.CreateDefaultService();
@@ -31,7 +31,7 @@ namespace VoterX
         // Random Data
         Random random = new Random();
         string[] randomNames = { "John", "Elric", "Alessandro", "Giovanni", "Girolamo", "Kapsberger", "Roberto", "Marcin", "Sergey", "Francesco", "Francisco", "Tarrega", "Lopez", "Coltrane", "Luigi", "Stefano", "Gabriel", "Astrix", "Kopberg", "Sven", "Swarx", "Benjamin", "Juho", "Eino", "Jouko", "Vilho", "Ville", "Eicca", "Johnny", "Ernie", "Fluke", "Mort", "Robbie", "Andrey", "Artem", "Artemskovich", "Alphonse", "Armstrong", "Ivan", "Ivar", "Bjornson", "Selvik", "Gundry", "Bjarne", "Camila", "Isabella", "Ignacio", "Rosales", "Fernando", "Joaquin", "Dante", "Rodriguez", "Manuel", "Felipe", "Gael", "Mikhail", "Maxim", "Kiril", "Vladimirovich", "Andriy", "Aleksander", "Apostol", "Avelovich", "Bogdan", "Leon", "Paul", "Finn", "Jonah", "Wang", "Teng", "Li", "Jei", "Zhang", "Bojing", "Changpu", "Chuanli", "Dingbang", "Komojikari", "Guang", "Huan", "Jinhai", "Manchu", "Armaan", "Arjun", "Aarav", "Aditya", "Rahul", "Rakesh", "Vivaan", "Fuji", "Haru", "Haruto", "Hiroto", "Kai", "Itsuki", "Kenji", "Yaketsuku", "Yakeru", "Homura", "Shimizu", "Tenmongaku", "Antantaru", "Fujin", "Raiden", "Ryujin", "Tsukiyomi", "Takemikazuchi", "Yuuto", "Temuleenev", "Ardhamonskiv" };
-        string[] randomLastNames = { "Warbringer", "TrojanX", "Hoverman", "Deikmann", "Liebestraume", "Oboemann", "Profundo", "Sopranino", "Soprano", "Tenor", "Baritone", "Bass", "Buffo", "Schgeller", "Sirmann", "Mann", "Zweihander", "Plogat", "Execute", "Ash" };
+        string[] randomLastNames = { "Desplat", "Greenwoods", "Atticus", "Abandons", "SRothe", "Mehldau", "Schmidt", "Dixieland", "Psyland", "Creole", "Adderley", "Strayhorn", "Hoverman", "Deikmann", "Liebestraume", "Oboemann", "Profundo", "Sopranino", "Soprano", "Tenor", "Baritone", "Bass", "Buffo", "Schgeller", "Sirmann", "Mann", "Zweihander", "Plogat", "Execute", "Ash", "Sandman", "Reverie", "Sentiment", "Hyman", "Helmut", "Nieberle", "Antti", "Sarpila", "Stochelo", "Thelonious" };
         string[] randomNumbers = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
         // Database Data
@@ -210,86 +210,87 @@ namespace VoterX
         }
 
         // Database Account Insertion 
-            private void InsertAccounts_Button_Click(object sender, EventArgs e)
+        private void InsertAccounts_Button_Click(object sender, EventArgs e)
+        {
+            // Sets The OpenFileDialog Settings
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Title = "Select The Accounts Text File";
+            openFileDialog.Filter = "Text File | *.txt";
+
+            // Opens OpenFileDialog 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Sets The OpenFileDialog Settings
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Title = "Select The Accounts Text File";
-                openFileDialog.Filter = "Text File | *.txt";
+                // Gets The FilePath
+                string filePath = openFileDialog.FileName;
 
-                // Opens OpenFileDialog 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                // Reads The File And Assigns The Sentences To AccountTextData
+                string[] accountTextData = File.ReadAllLines(filePath);
+
+                for (int i = 0; i < accountTextData.Length; i++)
                 {
-                    // Gets The FilePath
-                    string filePath = openFileDialog.FileName;
+                    // Takes A Account Sentence From Array To Extract Data
+                    fullSentence = accountTextData[i];
 
-                    // Reads The File And Assigns The Sentences To AccountTextData
-                    string[] accountTextData = File.ReadAllLines(filePath);
-
-                    for (int i = 0; i < accountTextData.Length; i++)
+                    // Sentence Extracting
+                    for (int index = 0; index < fullSentence.Length; index++)
                     {
-                        // Takes A Account Sentence From Array To Extract Data
-                        fullSentence = accountTextData[i];
+                        // Increase ReadedDigit Number Every Loop
+                        readedDigit++;
 
-                        // Sentence Extracting
-                        for (int index = 0; index < fullSentence.Length; index++)
+                        if (fullSentence[index].ToString() != ":")
                         {
-                            // Increase ReadedDigit Number Every Loop
-                            readedDigit++;
+                            extractedText = extractedText + fullSentence[index].ToString();
 
-                            if (fullSentence[index].ToString() != ":")
+                            if (readedDigit == fullSentence.Length)
                             {
-                                extractedText = extractedText + fullSentence[index].ToString();
+                                // Every New Sentence Makes It 0
+                                readedDigit = 0;
+                                colonRepeat = 0;
 
-                                if (readedDigit == fullSentence.Length)
-                                {
-                                    // Every New Sentence Makes It 0
-                                    readedDigit = 0;
-                                    colonRepeat = 0;
+                                accountRamblerRuPassword = extractedText;
+                                extractedText = "";
 
-                                    accountRamblerRuPassword = extractedText;
-                                    extractedText = "";
+                                //  OLEDB
+                                oleDbConnection.Open();
+                                OleDbCommand insertAccountCommand = new OleDbCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", oleDbConnection);
+                                insertAccountCommand.Parameters.AddWithValue("@p1", accountGmail);
+                                insertAccountCommand.Parameters.AddWithValue("@p2", accountGmailPassword);
+                                insertAccountCommand.Parameters.AddWithValue("@p3", accountRamblerRu);
+                                insertAccountCommand.Parameters.AddWithValue("@p4", accountRamblerRuPassword);
+                                insertAccountCommand.ExecuteNonQuery();
+                                oleDbConnection.Close();
 
-                                    //  OLEDB
-                                    oleDbConnection.Open();
-                                    OleDbCommand insertAccountCommand = new OleDbCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", oleDbConnection);
-                                    insertAccountCommand.Parameters.AddWithValue("@p1", accountGmail);
-                                    insertAccountCommand.Parameters.AddWithValue("@p2", accountGmailPassword);
-                                    insertAccountCommand.Parameters.AddWithValue("@p3", accountRamblerRu);
-                                    insertAccountCommand.Parameters.AddWithValue("@p4", accountRamblerRuPassword);
-                                    insertAccountCommand.ExecuteNonQuery();
-                                    oleDbConnection.Close();
-
-                                    accountGmail = "";
-                                    accountGmailPassword = "";
-                                    accountRamblerRu = "";
-                                    accountRamblerRuPassword = "";
-                                }
+                                accountGmail = "";
+                                accountGmailPassword = "";
+                                accountRamblerRu = "";
+                                accountRamblerRuPassword = "";
                             }
-                            else
-                            {
-                                colonRepeat++;
+                        }
+                        else
+                        {
+                            colonRepeat++;
 
-                                if (colonRepeat == 1)
-                                {
-                                    accountGmail = extractedText;
-                                    extractedText = "";
-                                }
-                                else if (colonRepeat == 2)
-                                {
-                                    accountGmailPassword = extractedText;
-                                    extractedText = "";
-                                }
-                                else if (colonRepeat == 3)
-                                {
-                                    accountRamblerRu = extractedText;
-                                    extractedText = "";
-                                }
+                            if (colonRepeat == 1)
+                            {
+                                accountGmail = extractedText;
+                                extractedText = "";
+                            }
+                            else if (colonRepeat == 2)
+                            {
+                                accountGmailPassword = extractedText;
+                                extractedText = "";
+                            }
+                            else if (colonRepeat == 3)
+                            {
+                                accountRamblerRu = extractedText;
+                                extractedText = "";
                             }
                         }
                     }
                 }
             }
+            this.voterX_AccountsTableTableAdapter.Fill(this.voterXDataSet.VoterX_AccountsTable);
+        }
 
         // |-| METHODS |-|
         // Register Method
@@ -326,7 +327,7 @@ namespace VoterX
                 while (emailReader.Read())
                 {
                     email = emailReader[0].ToString();
-                    emailPassword = emailReader[1].ToString();
+                    emailPassword = emailReader[1].ToString();  
                 }
                 emailReader.Close();
                 oleDbConnection.Close();
@@ -469,8 +470,8 @@ namespace VoterX
                 Thread.Sleep(1000);
 
                 // Logins To CoinSniper
-                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys(email);
-                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys(emailPassword);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys(email); // Email
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys(emailPassword); // Email Password
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[3]/div/input").Click();
                 Thread.Sleep(1000);
 
@@ -478,7 +479,13 @@ namespace VoterX
                 firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[1]/input").SendKeys(CoinName_TextBox.Text);
                 // Click Coin
                 firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[2]/a[1]").Click();
-                // Recaptcha API 
+                Thread.Sleep(1000);
+                // Recaptcha API
+                // Vote Coin
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div[2]/div/div[1]/div[6]/form/div/div[2]/button").Click();
+                Thread.Sleep(1000);
+                firefoxDriver.Close();
+                firefoxDriver.Quit();
             }
         }
     }

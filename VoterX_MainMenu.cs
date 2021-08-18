@@ -47,7 +47,6 @@ namespace VoterX
 
         private void VoterX_MainMenu_Load(object sender, EventArgs e)
         {
-            this.voterX_AccountsTableTableAdapter.Fill(this.voterXDataSet.VoterX_AccountsTable);
             sqlConnection = new SqlConnection(Database.databaseString);
         }
 
@@ -291,7 +290,6 @@ namespace VoterX
                     }
                 }
             }
-            this.voterX_AccountsTableTableAdapter.Fill(this.voterXDataSet.VoterX_AccountsTable);
         }
 
         // |-| METHODS |-|

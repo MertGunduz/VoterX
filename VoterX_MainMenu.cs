@@ -1,12 +1,10 @@
-﻿using System;
+﻿using OpenQA.Selenium.Firefox;
+using System;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
-using System.Net.Http;
-using OpenQA.Selenium.Firefox;
-using IronPython.Hosting;
-using System.Data.SqlClient;
 using VoterX.Properties;
 
 namespace VoterX
@@ -327,7 +325,7 @@ namespace VoterX
                 while (emailReader.Read())
                 {
                     email = emailReader[0].ToString();
-                    emailPassword = emailReader[1].ToString();  
+                    emailPassword = emailReader[1].ToString();
                 }
                 emailReader.Close();
                 sqlConnection.Close();
@@ -477,7 +475,7 @@ namespace VoterX
 
                 // Search Coin
                 firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[1]/input").SendKeys(CoinName_TextBox.Text);
-                
+
                 // Click Coin
                 firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[2]/a[1]").Click();
                 Thread.Sleep(1000);

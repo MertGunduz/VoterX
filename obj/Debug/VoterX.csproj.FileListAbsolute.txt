@@ -21,3 +21,17 @@ C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.Http.dll
 C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.pdb
 C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.xml
 C:\Users\u\source\repos\VoterX\bin\Debug\Flurl.Http.pdb
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.Modules.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.SQLite.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.Wpf.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\Microsoft.Dynamic.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\Microsoft.Scripting.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\Microsoft.Scripting.Metadata.dll
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.Modules.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.SQLite.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\IronPython.Wpf.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\Microsoft.Dynamic.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\Microsoft.Scripting.xml
+C:\Users\u\source\repos\VoterX\bin\Debug\Microsoft.Scripting.Metadata.xml

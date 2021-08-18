@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using System.Net.Http;
 using OpenQA.Selenium.Firefox;
+using IronPython.Hosting;
+using System.Data.SqlClient;
 using VoterX.Properties;
 
 namespace VoterX
@@ -26,7 +28,7 @@ namespace VoterX
         int readedDigit;
 
         // Database
-        OleDbConnection oleDbConnection;
+        SqlConnection sqlConnection;
 
         // Random Data
         Random random = new Random();
@@ -46,7 +48,7 @@ namespace VoterX
         private void VoterX_MainMenu_Load(object sender, EventArgs e)
         {
             this.voterX_AccountsTableTableAdapter.Fill(this.voterXDataSet.VoterX_AccountsTable);
-            oleDbConnection = new OleDbConnection(Database.databaseString);
+            sqlConnection = new SqlConnection(Database.databaseString);
         }
 
         // |-| USER INTERFACE |-|
@@ -250,15 +252,15 @@ namespace VoterX
                                 accountRamblerRuPassword = extractedText;
                                 extractedText = "";
 
-                                //  OLEDB
-                                oleDbConnection.Open();
-                                OleDbCommand insertAccountCommand = new OleDbCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", oleDbConnection);
+                                //  MSSQL
+                                sqlConnection.Open();
+                                SqlCommand insertAccountCommand = new SqlCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", sqlConnection);
                                 insertAccountCommand.Parameters.AddWithValue("@p1", accountGmail);
                                 insertAccountCommand.Parameters.AddWithValue("@p2", accountGmailPassword);
                                 insertAccountCommand.Parameters.AddWithValue("@p3", accountRamblerRu);
                                 insertAccountCommand.Parameters.AddWithValue("@p4", accountRamblerRuPassword);
                                 insertAccountCommand.ExecuteNonQuery();
-                                oleDbConnection.Close();
+                                sqlConnection.Close();
 
                                 accountGmail = "";
                                 accountGmailPassword = "";
@@ -305,24 +307,24 @@ namespace VoterX
             int totalAccounts = 0;
 
             // Reads The Account Quantity
-            oleDbConnection.Open();
-            OleDbCommand totalAccountCommand = new OleDbCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", oleDbConnection);
-            OleDbDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
+            sqlConnection.Open();
+            SqlCommand totalAccountCommand = new SqlCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", sqlConnection);
+            SqlDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
 
             while (totalAccountReader.Read())
             {
                 totalAccounts = (int)totalAccountReader[0];
             }
             totalAccountReader.Close();
-            oleDbConnection.Close();
+            sqlConnection.Close();
 
             for (int i = 1; i < totalAccounts; i++)
             {
-                // Reads Email & Password
-                oleDbConnection.Open();
-                OleDbCommand readEmailCommand = new OleDbCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", oleDbConnection);
+                // sqlConnection Email & Password
+                sqlConnection.Open();
+                SqlCommand readEmailCommand = new SqlCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", sqlConnection);
                 readEmailCommand.Parameters.AddWithValue("@p1", i);
-                OleDbDataReader emailReader = readEmailCommand.ExecuteReader();
+                SqlDataReader emailReader = readEmailCommand.ExecuteReader();
 
                 while (emailReader.Read())
                 {
@@ -330,17 +332,17 @@ namespace VoterX
                     emailPassword = emailReader[1].ToString();  
                 }
                 emailReader.Close();
-                oleDbConnection.Close();
+                sqlConnection.Close();
 
                 RegisterOperationLog_RichTextBox.Text += $"Email -> {email} \n Password -> {emailPassword}\n\nData Readed\n\n";
 
                 // Updates Registered Accounts
-                oleDbConnection.Open();
-                OleDbCommand registerBitCommand = new OleDbCommand("Update VoterX_AccountsTable Set Account_Registered = true Where Account_Gmail = @p1 And Account_GmailPassword = @p2", oleDbConnection);
+                sqlConnection.Open();
+                SqlCommand registerBitCommand = new SqlCommand("Update VoterX_AccountsTable Set Account_Registered = true Where Account_Gmail = @p1 And Account_GmailPassword = @p2", sqlConnection);
                 registerBitCommand.Parameters.AddWithValue("@p1", email);
                 registerBitCommand.Parameters.AddWithValue("@p2", emailPassword);
                 registerBitCommand.ExecuteNonQuery();
-                oleDbConnection.Close();
+                sqlConnection.Close();
 
                 RegisterOperationLog_RichTextBox.Text += "Registered Turned True\n\n";
 
@@ -427,24 +429,24 @@ namespace VoterX
             // Reads Total Accounts
             int totalAccounts = 0;
 
-            oleDbConnection.Open();
-            OleDbCommand totalAccountCommand = new OleDbCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", oleDbConnection);
-            OleDbDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
+            sqlConnection.Open();
+            SqlCommand totalAccountCommand = new SqlCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", sqlConnection);
+            SqlDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
 
             while (totalAccountReader.Read())
             {
                 totalAccounts = (int)totalAccountReader[0];
             }
             totalAccountReader.Close();
-            oleDbConnection.Close();
+            sqlConnection.Close();
 
             for (int i = 1; i < totalAccounts; i++)
             {
                 // Reads Email & Password
-                oleDbConnection.Open();
-                OleDbCommand readEmailCommand = new OleDbCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", oleDbConnection);
+                sqlConnection.Open();
+                SqlCommand readEmailCommand = new SqlCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", sqlConnection);
                 readEmailCommand.Parameters.AddWithValue("@p1", i);
-                OleDbDataReader emailReader = readEmailCommand.ExecuteReader();
+                SqlDataReader emailReader = readEmailCommand.ExecuteReader();
 
                 while (emailReader.Read())
                 {
@@ -452,7 +454,7 @@ namespace VoterX
                     emailPassword = emailReader[1].ToString();
                 }
                 emailReader.Close();
-                oleDbConnection.Close();
+                sqlConnection.Close();
 
                 // Sets The Options of Gecko Driver
                 firefoxDriverService.HideCommandPromptWindow = true;
@@ -477,10 +479,14 @@ namespace VoterX
 
                 // Search Coin
                 firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[1]/input").SendKeys(CoinName_TextBox.Text);
+                
                 // Click Coin
                 firefoxDriver.FindElementByXPath("/html/body/section[1]/div/nav/div[4]/div[1]/div[2]/div[2]/a[1]").Click();
                 Thread.Sleep(1000);
-                // Recaptcha API
+
+                // Recaptcha API (IronPython)
+
+
                 // Vote Coin
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div[2]/div/div[1]/div[6]/form/div/div[2]/button").Click();
                 Thread.Sleep(1000);

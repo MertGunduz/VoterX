@@ -1,4 +1,3 @@
-C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.accdb
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.exe.config
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.exe
 C:\Users\u\source\repos\VoterX\bin\Debug\VoterX.pdb

@@ -29,6 +29,7 @@ namespace VoterX
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoterX_MainMenu));
             this.Mid_Panel = new System.Windows.Forms.Panel();
             this.MidContainer_Panel = new System.Windows.Forms.Panel();
@@ -92,6 +93,17 @@ namespace VoterX
             this.TopLogo_PictureBox = new System.Windows.Forms.PictureBox();
             this.TopPanelBottomBorder_Panel = new System.Windows.Forms.Panel();
             this.TopPanelTopBorder_Panel = new System.Windows.Forms.Panel();
+            this.voterX_AccountsTableDataSet = new VoterX.VoterX_AccountsTableDataSet();
+            this.voterXAccountsTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.voterX_AccountsTableTableAdapter = new VoterX.VoterX_AccountsTableDataSetTableAdapters.VoterX_AccountsTableTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.accountNameCSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountPasswordCSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mid_Panel.SuspendLayout();
             this.MidContainer_Panel.SuspendLayout();
             this.MidContainer_ExpandPanel.SuspendLayout();
@@ -107,6 +119,8 @@ namespace VoterX
             this.Top_Panel.SuspendLayout();
             this.WindowState_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterX_AccountsTableDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Mid_Panel
@@ -176,8 +190,19 @@ namespace VoterX
             // 
             // Accounts_DataGridView
             // 
+            this.Accounts_DataGridView.AutoGenerateColumns = false;
             this.Accounts_DataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.Accounts_DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Accounts_DataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewCheckBoxColumn1,
+            this.accountNameCSDataGridViewTextBoxColumn,
+            this.accountPasswordCSDataGridViewTextBoxColumn});
+            this.Accounts_DataGridView.DataSource = this.voterXAccountsTableBindingSource;
             this.Accounts_DataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Accounts_DataGridView.Location = new System.Drawing.Point(0, 55);
             this.Accounts_DataGridView.Name = "Accounts_DataGridView";
@@ -833,6 +858,76 @@ namespace VoterX
             this.TopPanelTopBorder_Panel.Size = new System.Drawing.Size(800, 2);
             this.TopPanelTopBorder_Panel.TabIndex = 0;
             // 
+            // voterX_AccountsTableDataSet
+            // 
+            this.voterX_AccountsTableDataSet.DataSetName = "VoterX_AccountsTableDataSet";
+            this.voterX_AccountsTableDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // voterXAccountsTableBindingSource
+            // 
+            this.voterXAccountsTableBindingSource.DataMember = "VoterX_AccountsTable";
+            this.voterXAccountsTableBindingSource.DataSource = this.voterX_AccountsTableDataSet;
+            // 
+            // voterX_AccountsTableTableAdapter
+            // 
+            this.voterX_AccountsTableTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Account_ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Account_ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Account_Gmail";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Account_Gmail";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 159;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Account_GmailPassword";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Account_GmailPassword";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 231;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Account_RambleRu";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Account_RambleRu";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 193;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Account_RambleRuPassword";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Account_RambleRuPassword";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 265;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Account_Registered";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Account_Registered";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 177;
+            // 
+            // accountNameCSDataGridViewTextBoxColumn
+            // 
+            this.accountNameCSDataGridViewTextBoxColumn.DataPropertyName = "Account_NameCS";
+            this.accountNameCSDataGridViewTextBoxColumn.HeaderText = "Account_NameCS";
+            this.accountNameCSDataGridViewTextBoxColumn.Name = "accountNameCSDataGridViewTextBoxColumn";
+            this.accountNameCSDataGridViewTextBoxColumn.Width = 182;
+            // 
+            // accountPasswordCSDataGridViewTextBoxColumn
+            // 
+            this.accountPasswordCSDataGridViewTextBoxColumn.DataPropertyName = "Account_PasswordCS";
+            this.accountPasswordCSDataGridViewTextBoxColumn.HeaderText = "Account_PasswordCS";
+            this.accountPasswordCSDataGridViewTextBoxColumn.Name = "accountPasswordCSDataGridViewTextBoxColumn";
+            this.accountPasswordCSDataGridViewTextBoxColumn.Width = 206;
+            // 
             // VoterX_MainMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -862,6 +957,8 @@ namespace VoterX
             this.Top_Panel.ResumeLayout(false);
             this.WindowState_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TopLogo_PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterX_AccountsTableDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.voterXAccountsTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -936,6 +1033,17 @@ namespace VoterX
         private System.Windows.Forms.DataGridViewTextBoxColumn accountRambleRuDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn accountRambleRuPasswordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn accountRegisteredDataGridViewCheckBoxColumn;
+        private VoterX_AccountsTableDataSet voterX_AccountsTableDataSet;
+        private System.Windows.Forms.BindingSource voterXAccountsTableBindingSource;
+        private VoterX_AccountsTableDataSetTableAdapters.VoterX_AccountsTableTableAdapter voterX_AccountsTableTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountNameCSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn accountPasswordCSDataGridViewTextBoxColumn;
     }
 }
 

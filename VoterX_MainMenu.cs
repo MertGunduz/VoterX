@@ -45,6 +45,8 @@ namespace VoterX
 
         private void VoterX_MainMenu_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'voterX_AccountsTableDataSet.VoterX_AccountsTable' table. You can move, or remove it, as needed.
+            this.voterX_AccountsTableTableAdapter.Fill(this.voterX_AccountsTableDataSet.VoterX_AccountsTable);
             sqlConnection = new SqlConnection(Database.databaseString);
         }
 
@@ -304,7 +306,7 @@ namespace VoterX
 
             // Reads The Account Quantity
             sqlConnection.Open();
-            SqlCommand totalAccountCommand = new SqlCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", sqlConnection);
+            SqlCommand totalAccountCommand = new SqlCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = 0", sqlConnection);
             SqlDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
 
             while (totalAccountReader.Read())
@@ -334,7 +336,7 @@ namespace VoterX
 
                 // Updates Registered Accounts
                 sqlConnection.Open();
-                SqlCommand registerBitCommand = new SqlCommand("Update VoterX_AccountsTable Set Account_Registered = true Where Account_Gmail = @p1 And Account_GmailPassword = @p2", sqlConnection);
+                SqlCommand registerBitCommand = new SqlCommand("Update VoterX_AccountsTable Set Account_Registered = 1 Where Account_Gmail = @p1 And Account_GmailPassword = @p2", sqlConnection);
                 registerBitCommand.Parameters.AddWithValue("@p1", email);
                 registerBitCommand.Parameters.AddWithValue("@p2", emailPassword);
                 registerBitCommand.ExecuteNonQuery();

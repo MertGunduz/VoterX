@@ -185,6 +185,39 @@ namespace VoterX
             InsertAccounts_Button.ForeColor = Color.FromArgb(64, 186, 91);
         }
 
+        // TextBox Cleans
+        private void VoteQuantity_TextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (VoteQuantity_TextBox.Text == "  Vote Quantity ->")
+            {
+                VoteQuantity_TextBox.Clear();
+            }
+        }
+
+        private void CoinName_TextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (CoinName_TextBox.Text == "  Coin Name ->")
+            {
+                CoinName_TextBox.Clear();
+            }
+        }
+
+        private void AccountQuantity_TextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (AccountQuantity_TextBox.Text == "  Account Quantity ->")
+            {
+                AccountQuantity_TextBox.Clear();
+            }
+        }
+
+        private void OperationSpeed_TextBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (OperationSpeed_TextBox.Text == "  Registration Speed ->")
+            {
+                OperationSpeed_TextBox.Clear();
+            }
+        }
+
         // |-| BACKEND |-|
         // Sets The WindowState To Minimized
         private void Minimize_Button_Click(object sender, EventArgs e)

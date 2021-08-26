@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium.Firefox;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -19,8 +20,8 @@ namespace VoterX
         // Database Writing Accounts
         string fullSentence;
         string extractedText = "";
-        string accountGmail;
-        string accountGmailPassword;
+        string accountHotmail;
+        string accountHotmailPassword;
         string accountRamblerRu;
         string accountRamblerRuPassword;
         int colonRepeat = 0;
@@ -46,9 +47,18 @@ namespace VoterX
 
         private void VoterX_MainMenu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'voterX_AccountsTableDataSet.VoterX_AccountsTable' table. You can move, or remove it, as needed.
-            this.voterX_AccountsTableTableAdapter.Fill(this.voterX_AccountsTableDataSet.VoterX_AccountsTable);
             sqlConnection = new SqlConnection(Database.databaseString);
+            sqlConnection.Open();
+            SqlCommand readCommand = new SqlCommand("Select * From VoterX_AccountsTable", sqlConnection);
+            
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
+            sqlDataAdapter.SelectCommand = readCommand;
+
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            Accounts_DataGridView.DataSource = dataTable;
+            sqlConnection.Close();
         }
 
         // |-| USER INTERFACE |-|
@@ -287,16 +297,16 @@ namespace VoterX
 
                                 //  MSSQL
                                 sqlConnection.Open();
-                                SqlCommand insertAccountCommand = new SqlCommand("Insert Into VoterX_AccountsTable (Account_Gmail, Account_GmailPassword, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", sqlConnection);
-                                insertAccountCommand.Parameters.AddWithValue("@p1", accountGmail);
-                                insertAccountCommand.Parameters.AddWithValue("@p2", accountGmailPassword);
+                                SqlCommand insertAccountCommand = new SqlCommand("Insert Into VoterX_AccountsTable (Account_Hotmail, Account_Password, Account_RambleRu, Account_RambleRuPassword) Values (@p1, @p2, @p3, @p4)", sqlConnection);
+                                insertAccountCommand.Parameters.AddWithValue("@p1", accountHotmail);
+                                insertAccountCommand.Parameters.AddWithValue("@p2", accountHotmailPassword);
                                 insertAccountCommand.Parameters.AddWithValue("@p3", accountRamblerRu);
                                 insertAccountCommand.Parameters.AddWithValue("@p4", accountRamblerRuPassword);
                                 insertAccountCommand.ExecuteNonQuery();
                                 sqlConnection.Close();
 
-                                accountGmail = "";
-                                accountGmailPassword = "";
+                                accountHotmail = "";
+                                accountHotmailPassword = "";
                                 accountRamblerRu = "";
                                 accountRamblerRuPassword = "";
                             }
@@ -307,12 +317,12 @@ namespace VoterX
 
                             if (colonRepeat == 1)
                             {
-                                accountGmail = extractedText;
+                                accountHotmail = extractedText;
                                 extractedText = "";
                             }
                             else if (colonRepeat == 2)
                             {
-                                accountGmailPassword = extractedText;
+                                accountHotmailPassword = extractedText;
                                 extractedText = "";
                             }
                             else if (colonRepeat == 3)
@@ -354,7 +364,7 @@ namespace VoterX
             {
                 // sqlConnection Email & Password
                 sqlConnection.Open();
-                SqlCommand readEmailCommand = new SqlCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", sqlConnection);
+                SqlCommand readEmailCommand = new SqlCommand("Select Account_Hotmail, Account_Password From VoterX_AccountsTable Where Account_ID = @p1", sqlConnection);
                 readEmailCommand.Parameters.AddWithValue("@p1", i);
                 SqlDataReader emailReader = readEmailCommand.ExecuteReader();
 
@@ -370,7 +380,7 @@ namespace VoterX
 
                 // Updates Registered Accounts
                 sqlConnection.Open();
-                SqlCommand registerBitCommand = new SqlCommand("Update VoterX_AccountsTable Set Account_Registered = 1 Where Account_Gmail = @p1 And Account_GmailPassword = @p2", sqlConnection);
+                SqlCommand registerBitCommand = new SqlCommand("Update VoterX_AccountsTable Set Account_Registered = 1 Where Account_Hotmail = @p1 And Account_Password = @p2", sqlConnection);
                 registerBitCommand.Parameters.AddWithValue("@p1", email);
                 registerBitCommand.Parameters.AddWithValue("@p2", emailPassword);
                 registerBitCommand.ExecuteNonQuery();
@@ -476,7 +486,7 @@ namespace VoterX
             {
                 // Reads Email & Password
                 sqlConnection.Open();
-                SqlCommand readEmailCommand = new SqlCommand("Select Account_Gmail, Account_GmailPassword From VoterX_AccountsTable Where Account_ID = @p1", sqlConnection);
+                SqlCommand readEmailCommand = new SqlCommand("Select Account_Hotmail, Account_Password From VoterX_AccountsTable Where Account_ID = @p1", sqlConnection);
                 readEmailCommand.Parameters.AddWithValue("@p1", i);
                 SqlDataReader emailReader = readEmailCommand.ExecuteReader();
 

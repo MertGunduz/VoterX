@@ -43,5 +43,15 @@ namespace VoterX.Properties {
                 return ((string)(this["VoterX_AccountsTableConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KF3RK2L;Initial Catalog=VoterX;Integrated Security=True")]
+        public string VoterXConnectionString1 {
+            get {
+                return ((string)(this["VoterXConnectionString1"]));
+            }
+        }
     }
 }

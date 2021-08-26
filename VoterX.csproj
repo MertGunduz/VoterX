@@ -88,11 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
-    <Compile Include="VoterX_AccountsTableDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VoterX_AccountsTableDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="VoterX_MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,17 +119,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="VoterX_AccountsTableDataSet.xsc">
-      <DependentUpon>VoterX_AccountsTableDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="VoterX_AccountsTableDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>VoterX_AccountsTableDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="VoterX_AccountsTableDataSet.xss">
-      <DependentUpon>VoterX_AccountsTableDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

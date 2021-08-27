@@ -50,7 +50,7 @@ namespace VoterX
             sqlConnection = new SqlConnection(Database.databaseString);
             sqlConnection.Open();
             SqlCommand readCommand = new SqlCommand("Select * From VoterX_AccountsTable", sqlConnection);
-            
+
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
             sqlDataAdapter.SelectCommand = readCommand;
 
@@ -390,7 +390,26 @@ namespace VoterX
 
                 // Sets The FirefoxDriver Option
                 firefoxDriverService.HideCommandPromptWindow = true;
-                firefoxDriver = new FirefoxDriver(firefoxDriverService);
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                firefoxOptions.BrowserName.Equals("Mozilla Firefox");
+                firefoxOptions.AddArgument("--silent-launch");
+                firefoxOptions.AddArgument("--disable-dev-shm-usage");
+                firefoxOptions.AddArgument("--no-sandbox");
+                firefoxOptions.AddArgument("--disable-impl-side-painting");
+                firefoxOptions.AddArgument("--disable-setuid-sandbox");
+                firefoxOptions.AddArgument("--disable-seccomp-filter-sandbox");
+                firefoxOptions.AddArgument("--disable-breakpad");
+                firefoxOptions.AddArgument("--disable-client-side-phishing-detection");
+                firefoxOptions.AddArgument("--disable-cast");
+                firefoxOptions.AddArgument("--disable-cast-streaming-hw-encoding");
+                firefoxOptions.AddArgument("--disable-cloud-import");
+                firefoxOptions.AddArgument("--disable-popup-blocking");
+                firefoxOptions.AddArgument("--ignore-certificate-errors");
+                firefoxOptions.AddArgument("--disable-session-crashed-bubble");
+                firefoxOptions.AddArgument("--disable-ipv6");
+                firefoxOptions.AddArgument("--allow-http-screen-capture");
+                firefoxOptions.AddArgument("--start-maximized");
+                firefoxDriver = new FirefoxDriver(firefoxDriverService, firefoxOptions);
 
                 RegisterOperationLog_RichTextBox.Text += "Firefox Driver Setted\n\n";
 
@@ -403,7 +422,7 @@ namespace VoterX
                 // Selects The Server
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/input").SendKeys("https://coinsniper.net/register");
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select").Click();
-                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[14]").Click();
+                firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[1]/select/option[13]").Click();
                 firefoxDriver.FindElementByXPath("/html/body/div[2]/main/div[1]/div/div[3]/form/div[2]/button").Click();
                 Thread.Sleep(2000);
 

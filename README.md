@@ -11,3 +11,5 @@
 ## VoterX Main Menu
 
 ![VoterX_MainMenu](https://user-images.githubusercontent.com/65850970/129007062-2dd9041a-637a-45e4-ae41-15d06ea760fc.PNG)
+
+### ☉ Note: Development not finished yet.

@@ -47,7 +47,7 @@ namespace VoterX
             this.MidRightMargin_Panel = new System.Windows.Forms.Panel();
             this.MiddleContainer_Panel = new System.Windows.Forms.Panel();
             this.MiddleContainer_ExpandPanel = new System.Windows.Forms.Panel();
-            this.VoteQuantity_TextBox = new System.Windows.Forms.TextBox();
+            this.CoinDataKey_TextBox = new System.Windows.Forms.TextBox();
             this.MSeperator4_Panel = new System.Windows.Forms.Panel();
             this.CoinName_TextBox = new System.Windows.Forms.TextBox();
             this.MSeperator3_Panel = new System.Windows.Forms.Panel();
@@ -303,7 +303,7 @@ namespace VoterX
             // 
             // MiddleContainer_ExpandPanel
             // 
-            this.MiddleContainer_ExpandPanel.Controls.Add(this.VoteQuantity_TextBox);
+            this.MiddleContainer_ExpandPanel.Controls.Add(this.CoinDataKey_TextBox);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator4_Panel);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.CoinName_TextBox);
             this.MiddleContainer_ExpandPanel.Controls.Add(this.MSeperator3_Panel);
@@ -318,19 +318,19 @@ namespace VoterX
             this.MiddleContainer_ExpandPanel.Size = new System.Drawing.Size(249, 372);
             this.MiddleContainer_ExpandPanel.TabIndex = 8;
             // 
-            // VoteQuantity_TextBox
+            // CoinDataKey_TextBox
             // 
-            this.VoteQuantity_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.VoteQuantity_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.VoteQuantity_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.VoteQuantity_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.VoteQuantity_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
-            this.VoteQuantity_TextBox.Location = new System.Drawing.Point(0, 55);
-            this.VoteQuantity_TextBox.Name = "VoteQuantity_TextBox";
-            this.VoteQuantity_TextBox.Size = new System.Drawing.Size(249, 27);
-            this.VoteQuantity_TextBox.TabIndex = 18;
-            this.VoteQuantity_TextBox.Text = "  Vote Quantity ->";
-            this.VoteQuantity_TextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.VoteQuantity_TextBox_MouseClick);
+            this.CoinDataKey_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.CoinDataKey_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CoinDataKey_TextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CoinDataKey_TextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.CoinDataKey_TextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(186)))), ((int)(((byte)(91)))));
+            this.CoinDataKey_TextBox.Location = new System.Drawing.Point(0, 55);
+            this.CoinDataKey_TextBox.Name = "CoinDataKey_TextBox";
+            this.CoinDataKey_TextBox.Size = new System.Drawing.Size(249, 27);
+            this.CoinDataKey_TextBox.TabIndex = 18;
+            this.CoinDataKey_TextBox.Text = "  Coin DataKey ->";
+            this.CoinDataKey_TextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.VoteQuantity_TextBox_MouseClick);
             // 
             // MSeperator4_Panel
             // 
@@ -922,7 +922,7 @@ namespace VoterX
         private System.Windows.Forms.Panel RegisterRichTextBox_Panel;
         private System.Windows.Forms.RichTextBox RegisterOperationLog_RichTextBox;
         private System.Windows.Forms.Panel LSeperator1_Panel;
-        private System.Windows.Forms.TextBox VoteQuantity_TextBox;
+        private System.Windows.Forms.TextBox CoinDataKey_TextBox;
         private System.Windows.Forms.Panel MSeperator4_Panel;
         private System.Windows.Forms.TextBox CoinName_TextBox;
         private System.Windows.Forms.Panel MSeperator3_Panel;

@@ -199,9 +199,9 @@ namespace VoterX
         // TextBox Cleans
         private void VoteQuantity_TextBox_MouseClick(object sender, MouseEventArgs e)
         {
-            if (VoteQuantity_TextBox.Text == "  Vote Quantity ->")
+            if (CoinDataKey_TextBox.Text == "  Vote Quantity ->")
             {
-                VoteQuantity_TextBox.Clear();
+                CoinDataKey_TextBox.Clear();
             }
         }
 
@@ -364,8 +364,9 @@ namespace VoterX
             {
                 // sqlConnection Email & Password
                 sqlConnection.Open();
-                SqlCommand readEmailCommand = new SqlCommand("Select Account_Hotmail, Account_Password From VoterX_AccountsTable Where Account_ID = @p1", sqlConnection);
-                readEmailCommand.Parameters.AddWithValue("@p1", i);
+                SqlCommand readEmailCommand = new SqlCommand("Select Account_Hotmail, Account_Password From VoterX_AccountsTable Where Account_Registered = @p1 And Account_ID = @p2", sqlConnection);
+                readEmailCommand.Parameters.AddWithValue("@p1", false);
+                readEmailCommand.Parameters.AddWithValue("@p2", i);
                 SqlDataReader emailReader = readEmailCommand.ExecuteReader();
 
                 while (emailReader.Read())
@@ -380,9 +381,10 @@ namespace VoterX
 
                 // Updates Registered Accounts
                 sqlConnection.Open();
-                SqlCommand registerBitCommand = new SqlCommand("Update VoterX_AccountsTable Set Account_Registered = 1 Where Account_Hotmail = @p1 And Account_Password = @p2", sqlConnection);
+                SqlCommand registerBitCommand = new SqlCommand("Update VoterX_AccountsTable Set Account_Registered = @pt Where Account_Hotmail = @p1 And Account_Password = @p2", sqlConnection);
                 registerBitCommand.Parameters.AddWithValue("@p1", email);
                 registerBitCommand.Parameters.AddWithValue("@p2", emailPassword);
+                registerBitCommand.Parameters.AddWithValue("@pt", true);
                 registerBitCommand.ExecuteNonQuery();
                 sqlConnection.Close();
 
@@ -427,9 +429,12 @@ namespace VoterX
                 Thread.Sleep(2000);
 
                 RegisterOperationLog_RichTextBox.Text += "Server Initialized\n\n";
+    
+                // Generates Username
+                string generatedUsername = randomNames[random.Next(0, randomNames.Length - 1)] + randomLastNames[random.Next(0, randomLastNames.Length - 1)] + randomNumbers[random.Next(0, randomNumbers.Length - 1)];
 
                 // Enters Register Informations
-                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys(randomNames[random.Next(0, randomNames.Length - 1)] + randomLastNames[random.Next(0, randomLastNames.Length - 1)] + randomNumbers[random.Next(0, randomNumbers.Length - 1)]);
+                firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[1]/div/input").SendKeys(generatedUsername);
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[2]/div/input").SendKeys(email);
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[3]/div/input").SendKeys(emailPassword);
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[4]/div/input").SendKeys(emailPassword);
@@ -437,11 +442,19 @@ namespace VoterX
                 firefoxDriver.FindElementByXPath("/html/body/section[2]/div/div/div/div/form/div[7]/div/input").Click();
                 Thread.Sleep(1500);
 
-                RegisterOperationLog_RichTextBox.Text += "Register Informations Entered\n\n";
+                // Updates Database
+                sqlConnection.Open();
+                SqlCommand updateUsernameCommand = new SqlCommand("Update VoterX_AccountsTable Set CoinSniper_Username = @p1 Where Account_Hotmail = @p2", sqlConnection);
+                updateUsernameCommand.Parameters.AddWithValue("@p1", generatedUsername);
+                updateUsernameCommand.Parameters.AddWithValue("@p2", email);
+                updateUsernameCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+
+                RegisterOperationLog_RichTextBox.Text += "Register Informations Entered & Database Updated\n\n";
 
                 // Goes To Mail For Verification Link
                 firefoxDriver.Navigate().GoToUrl("https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1628095646&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d66ef082d-9382-52c4-98a0-7168729b0378&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015");
-                Thread.Sleep(1500);
+                Thread.Sleep(2500);
 
                 RegisterOperationLog_RichTextBox.Text += "Entered Mail For Verification \n\n";
 
@@ -453,9 +466,13 @@ namespace VoterX
                 // Password Login
                 firefoxDriver.FindElementByXPath("//*[@id='i0118']").SendKeys(emailPassword); // EmailPassword
                 firefoxDriver.FindElementByXPath("//*[@id='idSIButton9']").Click();
-                Thread.Sleep(500);
+                Thread.Sleep(1500);
 
                 RegisterOperationLog_RichTextBox.Text += "Signed In!\n\n";
+
+                // Skip Now
+                firefoxDriver.FindElementByXPath("//*[@id='iShowSkip']").Click();
+                Thread.Sleep(1000);
 
                 // Open Account Cookie
                 firefoxDriver.FindElementByXPath("//*[@id='idBtn_Back']").Click();
@@ -491,7 +508,8 @@ namespace VoterX
             int totalAccounts = 0;
 
             sqlConnection.Open();
-            SqlCommand totalAccountCommand = new SqlCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = false", sqlConnection);
+            SqlCommand totalAccountCommand = new SqlCommand("Select Count(*) From VoterX_AccountsTable Where Account_Registered = @p1", sqlConnection);
+            totalAccountCommand.Parameters.AddWithValue("@p1", false);
             SqlDataReader totalAccountReader = totalAccountCommand.ExecuteReader();
 
             while (totalAccountReader.Read())
@@ -557,6 +575,9 @@ namespace VoterX
         }
         private void SolverXCaptcha()
         {
+            // Datas
+            string coinDataSiteKey = CoinDataKey_TextBox.Text;
+
             // SolverX
             // Firefox Driver Service
             FirefoxDriverService firefoxDriverService = FirefoxDriverService.CreateDefaultService();
@@ -566,13 +587,13 @@ namespace VoterX
             FirefoxDriver firefoxDriver = new FirefoxDriver(firefoxDriverService);
 
             // Page URL
-            string pageURL = "https://www.google.com/recaptcha/api2/demo";
+            string pageURL = "PAGEURL";
 
             // API Key
             string apiKey = "YOUR API KEY";
 
             // DataSiteKey Captcha
-            string dataSiteKey = "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-";
+            string dataSiteKey = coinDataSiteKey;
 
             // Request String
             string firstRequest = $"https://2captcha.com/in.php?key={apiKey}&method=userrecaptcha&googlekey={dataSiteKey}&pageurl={pageURL}&json=1&invisible=1";

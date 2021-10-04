@@ -16,4 +16,8 @@
 
 ![DatabaseDesign](https://user-images.githubusercontent.com/65850970/135745355-72aed3b6-8f35-4311-bcf1-897d134cb1bb.PNG)
 
+Database Name --> VoterX <br>
+Table Name --> VoterX_AccountsTable <br>
+Database Management System --> MSSQL <br>
+
 ### ☉ Note: Development not finished yet.

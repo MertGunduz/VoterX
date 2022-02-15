@@ -20,4 +20,6 @@ Database Name --> VoterX <br>
 Table Name --> VoterX_AccountsTable <br>
 Database Management System --> MSSQL <br>
 
-### ☉ Note: Development not finished yet.
+### ☉ Note: Contact me for buying the bot. 
+### ☉ Telegram: oxmertgunduz
+### ☉ Mail: mertgunduz@metauniversalis.com

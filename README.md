@@ -22,4 +22,4 @@ Database Management System --> MSSQL <br>
 
 ### ☉ Note: Contact me for buying the bot. 
 ### ☉ Telegram: oxmertgunduz
-### ☉ Mail: mertgunduz@metauniversalis.com
+### ☉ Mail: merttgg@gmail.com

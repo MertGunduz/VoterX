@@ -19,3 +19,9 @@
 
 [<img alt="Telegram" width="40px" src="https://user-images.githubusercontent.com/65850970/161066540-57e804a6-526a-44cf-b3cb-359896b660a6.svg"/>](https://t.me/+POUnJKvv7LoyMTE8/)
 [<img alt="Discord" width="40px" src="https://user-images.githubusercontent.com/65850970/161066043-df077e06-f9b2-4fc1-a78d-58ffae0e2812.svg"/>](https://discord.gg/TxKB47RyMc/)
+
+## Contact Me Information
+
+Telegram: <a>oxmertgunduz</a> <br>
+Mail: merttgg@gmail.com <br>
+Bot Price: 450EUR

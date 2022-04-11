@@ -23,5 +23,5 @@
 ## Contact Me Information
 
 Telegram: <a>oxmertgunduz</a> <br>
-Mail: merttgg@gmail.com <br>
+Mail: mertgunduz@metauniversalis.com <br>
 Bot Price: 450EUR

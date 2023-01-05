@@ -10,8 +10,3 @@
 ## VoterX UI
 
 ![image](https://user-images.githubusercontent.com/65850970/146350675-626b639e-d88a-4dc2-8953-43c2657c1dc8.png)
-
-## Mail & Price
-
-![Price: 450EUR](https://img.shields.io/badge/Price-450EUR-brightgreen?style=for-the-badge)
-![Mail: merttgg@gmail.com](https://img.shields.io/badge/Mail-merttgg%40gmail.com-brightgreen?style=for-the-badge)
